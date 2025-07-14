@@ -1,0 +1,14 @@
+.player {
+  bottom: 110px;
+}
+.min-width-0 {
+  min-width: 0;
+}
+
+.duerighe {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Mostra massimo 2 righe */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
