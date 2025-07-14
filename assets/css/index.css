@@ -1,8 +1,15 @@
 .player {
   bottom: 110px;
 }
+.bg-black {
+  background-color: black;
+}
 .min-width-0 {
   min-width: 0;
+}
+
+.w-15 {
+  width: 15%;
 }
 
 .duerighe {
@@ -11,4 +18,16 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.progresso-canzone {
+  height: 4px;
+  background-color: #555;
+}
+.volume {
+  width: 80px;
+  height: 4px;
+  background-color: #555;
+}
+main {
+  font-family: "Circular";
 }
