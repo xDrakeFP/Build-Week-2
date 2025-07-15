@@ -11,6 +11,7 @@
       crossorigin="anonymous"
     />
   </head>
+
   <body class="bg-dark text-white">
     <header class="card bg-dark text-white position-relative">
       <img
@@ -121,7 +122,7 @@
           </svg>
         </button>
       </section>
-      <div class="row">
+      <div class="d-lg-flex">
         <div class="col order-lg-1 col-lg-4">
           <section class="container-fluid mt-5 ms-lg-5">
             <h1 class="mb-lg-4 d-lg-block d-none">Brani che ti piacciono</h1>
@@ -158,7 +159,7 @@
             </div>
           </section>
         </div>
-        <div class="col order-lg-0 col-lg-8">
+        <div class="col order-lg-0 col-lg-7">
           <article class="container-fluid mt-5">
             <h1>Popolari</h1>
             <div class="d-flex align-items-center my-4">
@@ -171,8 +172,9 @@
                 alt="Album"
               />
               <div class="d-flex flex-column flex-grow-1 ms-4 flex-lg-row">
-                <h5>Titolo</h5>
-                <p>Views</p>
+                <h5 style="width: 15em">Titolo</h5>
+
+                <p style="width: 5em" class="flex-lg-grow-1">Views</p>
                 <p class="d-none d-lg-block">Minutes</p>
               </div>
               <button
@@ -193,6 +195,7 @@
                 </svg>
               </button>
             </div>
+
             <div class="text-center text-lg-start">
               <button type="button" class="btn btn-dark text-white px-3 py-2">
                 VISUALIZZA ALTRO
