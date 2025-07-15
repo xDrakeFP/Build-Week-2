@@ -1,0 +1,47 @@
+img{
+    width: 298px;
+    margin-left: 1%;
+}
+nav{
+    background-color: rgb(32, 32, 32);
+    list-style: none;
+    height: 2em;
+}
+    
+.box{
+        height: 300px;
+}
+.button{
+    margin: 0;
+    margin-top: 45%;
+}
+    
+.sideText1{
+    width: 15%;
+    text-align: center;
+    margin-top: 2em;
+}
+.sideText2{
+    width: 15%;
+    text-align: center;
+    margin-top: 2em;
+    height: 25px;
+    
+}
+    
+
+.box{
+background: #000000;
+background: linear-gradient(37deg, rgba(0, 0, 0, 1) 56%, rgba(89, 89, 89, 1) 100%, rgba(158, 158, 158, 1) 100%);
+}
+.btn1{
+    width: 69px;
+    height: 40px;
+}
+.btn2{
+    width: 75px;
+    height: 40px;
+}
+.title{
+    font-size: 110px;
+}
