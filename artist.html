@@ -121,323 +121,86 @@
           </svg>
         </button>
       </section>
-      <section class="container-fluid mt-5">
-        <div class="d-flex">
-          <img
-            src="https://www.rollingstone.it/wp-content/uploads/2022/07/pinguini-tattici-nucleari.jpg"
-            class="rounded-circle me-3 position-relative"
-            height="100"
-            width="80"
-            alt="Avatar"
-          />
-          <span
-            class="position-absolute bg-success border border-2 text-dark rounded-circle"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-suit-heart-fill"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1"
+      <div class="row">
+        <div class="col order-lg-1 col-lg-4">
+          <section class="container-fluid mt-5 ms-lg-5">
+            <h1 class="mb-lg-4 d-lg-block d-none">Brani che ti piacciono</h1>
+            <div class="d-flex">
+              <img
+                src="https://www.rollingstone.it/wp-content/uploads/2022/07/pinguini-tattici-nucleari.jpg"
+                class="rounded-circle me-3 position-relative"
+                height="100"
+                width="80"
+                alt="Avatar"
               />
-            </svg>
-          </span>
-          <div class="d-flex flex-column align-self-center">
-            <h5>Brani che ti piacciono</h5>
-            <p>Brani dei "Artista"</p>
-          </div>
+              <span
+                class="position-absolute bg-success border border-2 text-dark rounded-circle"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-suit-heart-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1"
+                  />
+                </svg>
+              </span>
+              <div class="d-flex flex-column align-self-center">
+                <h5 class="d-lg-none">Brani che ti piacciono</h5>
+                <p class="d-lg-none">Brani dei "Artista"</p>
+                <p class="d-lg-block d-none">Hai messo like a tot brani</p>
+                <p class="d-lg-block d-none">"Artista"</p>
+              </div>
+            </div>
+          </section>
         </div>
-      </section>
-      <article class="container-fluid mt-5">
-        <h1>Popolari</h1>
-        <div class="d-flex align-items-center my-4">
-          <h4>1</h4>
-          <img
-            src="https://www.rollingstone.it/wp-content/uploads/2022/07/pinguini-tattici-nucleari.jpg"
-            class="ms-4"
-            height="100"
-            width="100"
-            alt="Album"
-          />
-          <div class="d-flex flex-column flex-grow-1 ms-4">
-            <h5>Titolo</h5>
-            <p>Views</p>
-          </div>
-          <button type="button" class="btn btn-dark text-secondary">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-three-dots-vertical"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
+        <div class="col order-lg-0 col-lg-8">
+          <article class="container-fluid mt-5">
+            <h1>Popolari</h1>
+            <div class="d-flex align-items-center my-4">
+              <h4>1</h4>
+              <img
+                src="https://www.rollingstone.it/wp-content/uploads/2022/07/pinguini-tattici-nucleari.jpg"
+                class="ms-4"
+                height="100"
+                width="100"
+                alt="Album"
               />
-            </svg>
-          </button>
+              <div class="d-flex flex-column flex-grow-1 ms-4 flex-lg-row">
+                <h5>Titolo</h5>
+                <p>Views</p>
+                <p class="d-none d-lg-block">Minutes</p>
+              </div>
+              <button
+                type="button"
+                class="btn btn-dark text-secondary d-lg-none"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-three-dots-vertical"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="text-center text-lg-start">
+              <button type="button" class="btn btn-dark text-white px-3 py-2">
+                VISUALIZZA ALTRO
+              </button>
+            </div>
+          </article>
         </div>
-        <div class="d-flex align-items-center my-4">
-          <h4>1</h4>
-          <img
-            src="https://www.rollingstone.it/wp-content/uploads/2022/07/pinguini-tattici-nucleari.jpg"
-            class="ms-4"
-            height="100"
-            width="100"
-            alt="Album"
-          />
-          <div class="d-flex flex-column flex-grow-1 ms-4">
-            <h5>Titolo</h5>
-            <p>Views</p>
-          </div>
-          <button type="button" class="btn btn-dark text-secondary">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-three-dots-vertical"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
-              />
-            </svg>
-          </button>
-        </div>
-        <div class="d-flex align-items-center my-4">
-          <h4>1</h4>
-          <img
-            src="https://www.rollingstone.it/wp-content/uploads/2022/07/pinguini-tattici-nucleari.jpg"
-            class="ms-4"
-            height="100"
-            width="100"
-            alt="Album"
-          />
-          <div class="d-flex flex-column flex-grow-1 ms-4">
-            <h5>Titolo</h5>
-            <p>Views</p>
-          </div>
-          <button type="button" class="btn btn-dark text-secondary">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-three-dots-vertical"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
-              />
-            </svg>
-          </button>
-        </div>
-        <div class="d-flex align-items-center my-4">
-          <h4>1</h4>
-          <img
-            src="https://www.rollingstone.it/wp-content/uploads/2022/07/pinguini-tattici-nucleari.jpg"
-            class="ms-4"
-            height="100"
-            width="100"
-            alt="Album"
-          />
-          <div class="d-flex flex-column flex-grow-1 ms-4">
-            <h5>Titolo</h5>
-            <p>Views</p>
-          </div>
-          <button type="button" class="btn btn-dark text-secondary">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-three-dots-vertical"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
-              />
-            </svg>
-          </button>
-        </div>
-        <div class="d-flex align-items-center my-4">
-          <h4>1</h4>
-          <img
-            src="https://www.rollingstone.it/wp-content/uploads/2022/07/pinguini-tattici-nucleari.jpg"
-            class="ms-4"
-            height="100"
-            width="100"
-            alt="Album"
-          />
-          <div class="d-flex flex-column flex-grow-1 ms-4">
-            <h5>Titolo</h5>
-            <p>Views</p>
-          </div>
-          <button type="button" class="btn btn-dark text-secondary">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-three-dots-vertical"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
-              />
-            </svg>
-          </button>
-        </div>
-        <div class="d-flex align-items-center my-4">
-          <h4>1</h4>
-          <img
-            src="https://www.rollingstone.it/wp-content/uploads/2022/07/pinguini-tattici-nucleari.jpg"
-            class="ms-4"
-            height="100"
-            width="100"
-            alt="Album"
-          />
-          <div class="d-flex flex-column flex-grow-1 ms-4">
-            <h5>Titolo</h5>
-            <p>Views</p>
-          </div>
-          <button type="button" class="btn btn-dark text-secondary">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-three-dots-vertical"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
-              />
-            </svg>
-          </button>
-        </div>
-        <div class="d-flex align-items-center my-4">
-          <h4>1</h4>
-          <img
-            src="https://www.rollingstone.it/wp-content/uploads/2022/07/pinguini-tattici-nucleari.jpg"
-            class="ms-4"
-            height="100"
-            width="100"
-            alt="Album"
-          />
-          <div class="d-flex flex-column flex-grow-1 ms-4">
-            <h5>Titolo</h5>
-            <p>Views</p>
-          </div>
-          <button type="button" class="btn btn-dark text-secondary">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-three-dots-vertical"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
-              />
-            </svg>
-          </button>
-        </div>
-        <div class="d-flex align-items-center my-4">
-          <h4>1</h4>
-          <img
-            src="https://www.rollingstone.it/wp-content/uploads/2022/07/pinguini-tattici-nucleari.jpg"
-            class="ms-4"
-            height="100"
-            width="100"
-            alt="Album"
-          />
-          <div class="d-flex flex-column flex-grow-1 ms-4">
-            <h5>Titolo</h5>
-            <p>Views</p>
-          </div>
-          <button type="button" class="btn btn-dark text-secondary">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-three-dots-vertical"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
-              />
-            </svg>
-          </button>
-        </div>
-        <div class="d-flex align-items-center my-4">
-          <h4>1</h4>
-          <img
-            src="https://www.rollingstone.it/wp-content/uploads/2022/07/pinguini-tattici-nucleari.jpg"
-            class="ms-4"
-            height="100"
-            width="100"
-            alt="Album"
-          />
-          <div class="d-flex flex-column flex-grow-1 ms-4">
-            <h5>Titolo</h5>
-            <p>Views</p>
-          </div>
-          <button type="button" class="btn btn-dark text-secondary">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-three-dots-vertical"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
-              />
-            </svg>
-          </button>
-        </div>
-        <div class="d-flex align-items-center my-4">
-          <h4>1</h4>
-          <img
-            src="https://www.rollingstone.it/wp-content/uploads/2022/07/pinguini-tattici-nucleari.jpg"
-            class="ms-4"
-            height="100"
-            width="100"
-            alt="Album"
-          />
-          <div class="d-flex flex-column flex-grow-1 ms-4">
-            <h5>Titolo</h5>
-            <p>Views</p>
-          </div>
-          <button type="button" class="btn btn-dark text-secondary">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-three-dots-vertical"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
-              />
-            </svg>
-          </button>
-        </div>
-        <div class="text-center">
-          <button>Mostra altro</button>
-        </div>
-      </article>
+      </div>
     </main>
     <footer></footer>
     <script
