@@ -25,19 +25,29 @@
       >
         <ul class="nav w-100 d-flex">
           <li class="nav-item text-center flex-fill min-width-0">
-            <a href="#" class="nav-link px-0 small text-white px-0 d-block">
+            <a
+              href="javascript:void(0)"
+              class="nav-link px-0 small text-white px-0 d-block"
+            >
               <i class="bi bi-house-door d-block fs-5"></i>
               Home
             </a>
           </li>
           <li class="nav-item text-center flex-fill px-0 min-width-0">
-            <a href="#" class="nav-link px-0 small text-white d-block">
+            <a
+              id="showBarMob"
+              href="javascript:void(0)"
+              class="nav-link px-0 small text-white d-block"
+            >
               <i class="bi bi-search d-block fs-5"></i>
               Cerca
             </a>
           </li>
           <li class="nav-item text-center flex-fill px-0 min-width-0">
-            <a href="#" class="nav-link px-0 small text-white d-block">
+            <a
+              href="javascript:void(0)"
+              class="nav-link px-0 small text-white d-block"
+            >
               <i class="bi bi-collection d-block fs-5"></i>
               Libreria
             </a>
@@ -87,6 +97,7 @@
               </li>
               <li class="nav-item text-center flex-fill px-0 min-width-0">
                 <a
+                  id="showBar"
                   href="#"
                   class="nav-link px-0 small text-white d-flex flex-row align-items-center fs-4"
                 >
@@ -151,6 +162,21 @@
           <!-- Container Centrale che in mobile è fullscreen -->
           <div class="col-12 col-lg-8 bg-dark">
             <div class="container mt-5">
+              <!--barra di ricerca-->
+              <div class="container-fluid my-3 d-none" id="searchBar">
+                <form id="searchForm" class="d-flex" role="search">
+                  <input
+                    class="form-control me-2"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                  <button class="btn btn-outline-success" type="submit">
+                    Search
+                  </button>
+                </form>
+              </div>
+              <!--fine barra di ricerca-->
               <!-- Header -->
               <div class="row align-items-center">
                 <div class="col-7 p-4">
@@ -208,7 +234,20 @@
                 </div>
                 -->
               </div>
+              <!--risultati ricerca-->
+              <div id="Risultati" class="d-flex mt-5 d-none align-items-center">
+                <h1>Risultati Ricerca</h1>
+                <a
+                  href="javascript:void(0)"
+                  onclick="closeSearch()"
+                  class="text-light"
+                  ><i class="bi bi-x-lg fs-4 ms-2"></i
+                ></a>
+              </div>
+              <div id="risultatiRicerca" class="mb-4"></div>
+              <!--fine risultati ricerca-->
               <h2 class="my-5">Altro di ciò che ti piace</h2>
+
               <div class="row g-2" id="secondRow">
                 <!--<div class="col col-12 col-md-6 col-lg-3">
                   <a href="#" class="text-decoration-none text-white"

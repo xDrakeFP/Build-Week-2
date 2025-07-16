@@ -32,7 +32,11 @@
             </a>
           </li>
           <li class="nav-item text-center flex-fill px-0 min-width-0">
-            <a href="#" class="nav-link px-0 small text-white d-block">
+            <a
+              id="showBarMob"
+              href="javascript:void(0)"
+              class="nav-link px-0 small text-white d-block"
+            >
               <i class="bi bi-search d-block fs-5"></i>
               Cerca
             </a>
@@ -67,7 +71,8 @@
               </li>
               <li class="nav-item text-center flex-fill px-0 min-width-0">
                 <a
-                  href="#"
+                  id="showBar"
+                  href="javascript:void(0)"
                   class="nav-link px-0 small text-white d-flex flex-row align-items-center fs-4"
                 >
                   <i class="bi bi-search d-block me-3"></i>
@@ -129,7 +134,39 @@
             </div>
           </div>
           <!-- Parte Centrale -->
+
           <div class="col-12 col-lg-8 bg-dark p-0">
+            <!--barra di ricerca-->
+            <div class="container-fluid my-3 d-none" id="searchBar">
+              <form id="searchForm" class="d-flex" role="search">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button class="btn btn-outline-success" type="submit">
+                  Search
+                </button>
+              </form>
+            </div>
+            <!--fine barra di ricerca-->
+
+            <!--risultati ricerca-->
+            <div class="container d-none" id="Risultati">
+              <div class="d-flex mt-5 align-items-center">
+                <h1>Risultati Ricerca</h1>
+                <a
+                  href="javascript:void(0)"
+                  onclick="closeSearch()"
+                  class="text-light"
+                  ><i class="bi bi-x-lg fs-4 ms-2"></i
+                ></a>
+              </div>
+              <div id="risultatiRicerca" class="mb-4"></div>
+              <h1>Fine Risultati Ricerca</h1>
+            </div>
+            <!--fine risultati ricerca-->
             <div class="bg-dark text-white position-relative">
               <img
                 src="https://www.rollingstone.it/wp-content/uploads/2022/07/pinguini-tattici-nucleari.jpg"
@@ -257,6 +294,7 @@
                 </svg>
               </button>
             </section>
+
             <div class="d-lg-flex">
               <div class="col order-lg-1 col-lg-4">
                 <section class="container-fluid mt-5 ms-lg-5">
@@ -303,7 +341,7 @@
                 <article class="container-fluid mt-5">
                   <h1>Popolari</h1>
                   <div id="content">
-                    <div class="d-flex align-items-center my-4">
+                    <!--  <div class="d-flex align-items-center my-4">
                       <h4>1</h4>
                       <img
                         src="https://www.rollingstone.it/wp-content/uploads/2022/07/pinguini-tattici-nucleari.jpg"
@@ -337,7 +375,7 @@
                           />
                         </svg>
                       </button>
-                    </div>
+                    </div>-->
                   </div>
 
                   <div class="text-center text-lg-start">

@@ -53,12 +53,12 @@ const getTracks = function () {
                   alt="Album"
                 />
                 <div class="d-flex flex-column flex-grow-1 ms-4 flex-lg-row">
-                  <h5 style="width: 15em" class='me-4'>${
+                  <h5 style="width: 7em" class='me-4'>${
                     data1.data[i].title
                   }</h5>
 
-                  <p style="width: 4em" class="flex-lg-grow-1 text-center">Views</p>
-                  <p class="d-none d-lg-block">${minutes}: ${seconds}</p>
+                  <p style="width: 3.1em" class="flex-lg-grow-1 text-center">Views</p>
+                  <p class="d-none d-lg-block" style="width: 3.1em">${minutes}: ${seconds}</p>
                 </div>
                 <button
                   type="button"
@@ -111,3 +111,80 @@ const getArtist = function () {
 };
 
 getArtist();
+
+// funzione di ricerca
+const showBarBtn = document.getElementById("showBar");
+const searchBar = document.getElementById("searchBar");
+const showBarMob = document.getElementById("showBarMob");
+const risultatiRicerca = document.getElementById("risultatiRicerca");
+const searchForm = document.getElementById("searchForm");
+const searchInput = document.querySelector("form input");
+const Risultati = document.getElementById("Risultati");
+
+showBarBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  searchBar.classList.toggle("d-none");
+});
+
+showBarMob.addEventListener("click", (e) => {
+  e.preventDefault();
+  searchBar.classList.toggle("d-none");
+});
+
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  Risultati.classList.remove("d-none");
+  fetch(endSearch + searchInput.value)
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw new Error("errore");
+      }
+    })
+    .then((data) => {
+      console.log(data);
+      risultatiRicerca.innerHTML = "";
+      for (let i = 0; i < data.data.length; i++) {
+        let minutes = Math.floor(data.data[i].duration / 60);
+        let seconds = Math.floor(data.data[i].duration % 60);
+        if (minutes < 10) {
+          minutes = "0" + minutes.toString();
+        } else {
+          minutes = minutes;
+        }
+        if (seconds < 10) {
+          seconds = "0" + seconds.toString();
+        } else {
+          seconds = seconds;
+        }
+
+        risultatiRicerca.innerHTML += `
+       <div class="row align-items-center my-3">
+                  <div class="col col-3">
+                    <img
+                      alt="cover"
+                      src=${data.data[i].album.cover_big}
+                      class="w-100"
+                    />
+                  </div>
+                  <div class="col col-6">
+                   <a href='javascript:void(0)' class='text-decoration-none text-white'> <h2>${data.data[i].title_short}</h2></a>
+                  </div>
+                  <div class="col col-2">
+                    <h5>${minutes}: ${seconds}</h5>
+                  </div>
+                </div>
+      `;
+      }
+      e.target.reset();
+    })
+    .catch((er) => {
+      console.log(er);
+    });
+});
+
+const closeSearch = function () {
+  Risultati.classList.add("d-none");
+  risultatiRicerca.innerHTML = "";
+};
