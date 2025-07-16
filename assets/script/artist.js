@@ -48,6 +48,7 @@ const getTracks = function () {
 
         content.innerHTML += `
   <div class="d-flex align-items-center my-4">
+  <span style="width:1em" class="fs-4">${i + 1}</span>
     <img src="${imageUrl}" class="ms-4" height="100" width="100" alt="Album" />
     <div class="d-flex flex-column flex-grow-1 ms-4 flex-lg-row">
       <a href='javascript:void(0)' class='click text-decoration-none text-white'
@@ -57,8 +58,9 @@ const getTracks = function () {
       <p style="width: 4em" class="flex-lg-grow-1 text-center">Views</p>
       <p class="d-none d-lg-block">${minutes}:${seconds}</p>
     </div>
+    
   </div>
-  <h4>${i + 1}</h4>
+  
 `;
       }
     })
