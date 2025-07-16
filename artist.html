@@ -22,7 +22,7 @@
     <header>
       <!-- NAVBAR infondo -->
       <nav
-        class="navbar position-fixed bottom-0 start-0 end-0 p-2 rounded m-3 z-1 d-lg-none"
+        class="navbar position-fixed bottom-0 start-0 end-0 rounded z-1 d-lg-none bg-dark"
       >
         <ul class="nav w-100 d-flex">
           <li class="nav-item text-center flex-fill min-width-0">
@@ -55,7 +55,7 @@
         <div class="row">
           <!-- NAV desktop a sinsitra -->
           <div
-            class="col col-lg-2 d-none d-lg-block bg-black d-flex flex-column text-white p-4"
+            class="col col-lg-2 d-none d-lg-block bg-black d-flex flex-column text-white p-4 w-auto"
           >
             <i class="bi bi-three-dots fs-3"></i>
             <!-- Prima Ul con Home Cerca e Libreria -->
@@ -135,7 +135,7 @@
           </div>
           <!-- Parte Centrale -->
 
-          <div class="col-12 col-lg-8 bg-dark p-0">
+          <div class="col-12 col-lg-8 bg-dark p-0 flex-fill">
             <!--barra di ricerca-->
             <div class="container-fluid my-3 d-none" id="searchBar">
               <form id="searchForm" class="d-flex" role="search">
@@ -170,7 +170,7 @@
             <div class="bg-dark text-white position-relative">
               <img
                 src="https://www.rollingstone.it/wp-content/uploads/2022/07/pinguini-tattici-nucleari.jpg"
-                class="img-fluid"
+                class="img-fluid object-fit-cover"
                 width="100%"
                 alt="Album"
                 id="bgArtist"
@@ -340,43 +340,7 @@
               <div class="col order-lg-0 col-lg-7">
                 <article class="container-fluid mt-5">
                   <h1>Popolari</h1>
-                  <div id="content">
-                    <!--  <div class="d-flex align-items-center my-4">
-                      <h4>1</h4>
-                      <img
-                        src="https://www.rollingstone.it/wp-content/uploads/2022/07/pinguini-tattici-nucleari.jpg"
-                        class="ms-4"
-                        height="100"
-                        width="100"
-                        alt="Album"
-                      />
-                      <div
-                        class="d-flex flex-column flex-grow-1 ms-4 flex-lg-row"
-                      >
-                        <h5 style="width: 15em">Titolo</h5>
-
-                        <p style="width: 5em" class="flex-lg-grow-1">Views</p>
-                        <p class="d-none d-lg-block">Minutes</p>
-                      </div>
-                      <button
-                        type="button"
-                        class="btn btn-dark text-secondary d-lg-none"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          fill="currentColor"
-                          class="bi bi-three-dots-vertical"
-                          viewBox="0 0 16 16"
-                        >
-                          <path
-                            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
-                          />
-                        </svg>
-                      </button>
-                    </div>-->
-                  </div>
+                  <div id="content"></div>
 
                   <div class="text-center text-lg-start">
                     <button
@@ -412,16 +376,17 @@
       >
         <!-- a sinistra copertina e info brano -->
         <div
-          class="d-flex align-items-center flex-grow-1 z-3 justify-content-start w-25"
+          class="titleTrack d-flex align-items-center flex-grow-1 z-3 justify-content-start w-25"
         >
           <img
+            id="playerImg"
             src="./assets/imgs/main/image-1.jpg"
             alt="Copertina album"
             class="img-fluid rounded me-3 w-15"
           />
           <div class="text-truncate">
-            <div class="fw-semibold">Canzone</div>
-            <div class="text-secondary small">Artista</div>
+            <div id="playerTitle" class="fw-semibold">Canzone</div>
+            <div id="playerArtist" class="text-secondary small">Artista</div>
           </div>
           <i class="bi bi-heart ms-3"></i>
         </div>
@@ -433,6 +398,7 @@
           <!-- Controlli del player-->
           <div
             class="d-flex align-items-center justify-content-center gap-3 mb-1"
+            id="preview"
           >
             <i class="bi bi-shuffle"></i>
             <i class="bi bi-skip-start-fill"></i>
@@ -440,7 +406,7 @@
             <i class="bi bi-skip-end-fill"></i>
             <i class="bi bi-shuffle"></i>
           </div>
-          <!-- Bbarra di progresso della canzone -->
+          <!-- Barra di progresso della canzone -->
           <div
             class="d-flex align-items-center w-100 justify-content-center gap-2"
           >

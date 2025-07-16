@@ -41,44 +41,27 @@ const getTracks = function () {
         } else {
           seconds = seconds;
         }
+        //funzione che genera html dinamico
+        let title = data1.data[i].title.replace(/'/g, "\\'");
+        let artist = data1.data[i].artist.name.replace(/'/g, "\\'");
+        let imageUrl = data1.data[i].album.cover_big;
 
         content.innerHTML += `
-      <div class="d-flex align-items-center my-4">
-                <h4>${i + 1}</h4>
-                <img
-                  src=${data1.data[i].album.cover_big}
-                  class="ms-4"
-                  height="100"
-                  width="100"
-                  alt="Album"
-                />
-                <div class="d-flex flex-column flex-grow-1 ms-4 flex-lg-row">
-                  <h5 style="width: 7em" class='me-4'>${
-                    data1.data[i].title
-                  }</h5>
-
-                  <p style="width: 3.1em" class="flex-lg-grow-1 text-center">Views</p>
-                  <p class="d-none d-lg-block" style="width: 3.1em">${minutes}: ${seconds}</p>
-                </div>
-                <button
-                  type="button"
-                  class="btn btn-dark text-secondary d-lg-none"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-three-dots-vertical"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
-                    />
-                  </svg>
-                </button>
-              </div>
-      `;
+  <div class="d-flex align-items-center my-4">
+  <span style="width:1em" class="fs-4">${i + 1}</span>
+    <img src="${imageUrl}" class="ms-4" height="100" width="100" alt="Album" />
+    <div class="d-flex flex-column flex-grow-1 ms-4 flex-lg-row">
+      <a href='javascript:void(0)' class='click text-decoration-none text-white'
+        onclick="player('${title}', '${artist}', '${imageUrl}')">
+        <h5 style="width: 15em" class='me-4 text-white'>${title}</h5>
+      </a>
+      <p style="width: 4em" class="flex-lg-grow-1 text-center">Views</p>
+      <p class="d-none d-lg-block">${minutes}:${seconds}</p>
+    </div>
+    
+  </div>
+  
+`;
       }
     })
     .catch((er) => {
@@ -187,4 +170,12 @@ searchForm.addEventListener("submit", (e) => {
 const closeSearch = function () {
   Risultati.classList.add("d-none");
   risultatiRicerca.innerHTML = "";
+  //Funzione per caricare sulla barra player un altra traccia
+  const addTitile = document.querySelector("click");
+
+  const player = function (title, artist, imageUrl) {
+    document.getElementById("playerImg").src = imageUrl;
+    document.getElementById("playerTitle").innerText = title;
+    document.getElementById("playerArtist").innerText = artist;
+  };
 };
