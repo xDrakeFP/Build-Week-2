@@ -10,204 +10,422 @@
       integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
       crossorigin="anonymous"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/circular-font.css" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
   </head>
 
-  <body class="bg-dark text-white">
-    <header
-      class="card bg-dark text-white position-relative"
-      style="height: 25em"
-    >
-      <img
-        src="https://www.rollingstone.it/wp-content/uploads/2022/07/pinguini-tattici-nucleari.jpg"
-        class="img-fluid h-100 object-fit-cover"
-        alt="Album"
-      />
-      <div class="position-absolute top-0 start-0 container-fluid">
-        <button
-          class="btn btn-dark opacity-50 text-white rounded-circle px-3 py-2"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-arrow-left-short"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"
-            />
-          </svg>
-        </button>
-      </div>
-      <div class="position-absolute bottom-0 start-0 container-fluid">
-        <h1>Nome Artista</h1>
-      </div>
+  <body class="bg-dark text-white pb-5">
+    <header>
+      <!-- NAVBAR infondo -->
+      <nav
+        class="navbar position-fixed bottom-0 start-0 end-0 p-2 rounded m-3 z-1 d-lg-none"
+      >
+        <ul class="nav w-100 d-flex">
+          <li class="nav-item text-center flex-fill min-width-0">
+            <a href="#" class="nav-link px-0 small text-white px-0 d-block">
+              <i class="bi bi-house-door d-block fs-5"></i>
+              Home
+            </a>
+          </li>
+          <li class="nav-item text-center flex-fill px-0 min-width-0">
+            <a href="#" class="nav-link px-0 small text-white d-block">
+              <i class="bi bi-search d-block fs-5"></i>
+              Cerca
+            </a>
+          </li>
+          <li class="nav-item text-center flex-fill px-0 min-width-0">
+            <a href="#" class="nav-link px-0 small text-white d-block">
+              <i class="bi bi-collection d-block fs-5"></i>
+              Libreria
+            </a>
+          </li>
+        </ul>
+      </nav>
     </header>
-    <main>
-      <section class="container-fluid d-flex my-3">
-        <button
-          type="button"
-          class="btn btn-dark text-white rounded rounded-pill px-3 py-2 order-lg-1"
-        >
-          Segui
-        </button>
-        <button
-          type="button"
-          class="btn btn-dark text-secondary px-3 py-2 order-lg-3 d-lg-none"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-three-dots-vertical"
-            viewBox="0 0 16 16"
+    <main class="vh-100">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- NAV desktop a sinsitra -->
+          <div
+            class="col col-lg-2 d-none d-lg-block bg-black d-flex flex-column text-white p-4"
           >
-            <path
-              d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
-            />
-          </svg></button
-        ><button
-          type="button"
-          class="btn btn-dark text-secondary px-3 py-2 order-lg-3 d-none d-lg-block"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-three-dots"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
-            />
-          </svg>
-        </button>
-        <button
-          type="button"
-          class="btn btn-dark text-success px-3 py-2 ms-auto d-lg-none"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-shuffle"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.6 9.6 0 0 0 7.556 8a9.6 9.6 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.6 10.6 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.6 9.6 0 0 0 6.444 8a9.6 9.6 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5"
-            />
-            <path
-              d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192"
-            />
-          </svg>
-        </button>
-        <button
-          type="button"
-          class="btn btn-success rounded rounded-circle px-3 py-2 order-lg-0"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-play-fill"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"
-            />
-          </svg>
-        </button>
-      </section>
-      <div class="d-lg-flex">
-        <div class="col order-lg-1 col-lg-4">
-          <section class="container-fluid mt-5 ms-lg-5">
-            <h1 class="mb-lg-4 d-lg-block d-none">Brani che ti piacciono</h1>
-            <div class="d-flex">
+            <i class="bi bi-three-dots fs-3"></i>
+            <!-- Prima Ul con Home Cerca e Libreria -->
+            <ul class="nav w-100 d-flex flex-column mb-4">
+              <li class="nav-item text-center flex-fill min-width-0">
+                <a
+                  href="#"
+                  class="nav-link px-0 small text-white px-0 d-flex flex-row fs-4"
+                >
+                  <i class="bi bi-house-door d-block me-3"></i>
+                  Home
+                </a>
+              </li>
+              <li class="nav-item text-center flex-fill px-0 min-width-0">
+                <a
+                  href="#"
+                  class="nav-link px-0 small text-white d-flex flex-row align-items-center fs-4"
+                >
+                  <i class="bi bi-search d-block me-3"></i>
+                  Cerca
+                </a>
+              </li>
+              <li class="nav-item text-center flex-fill px-0 min-width-0">
+                <a
+                  href="#"
+                  class="nav-link px-0 small text-white d-flex flex-row fs-4"
+                >
+                  <i class="bi bi-collection d-block me-3"></i>
+                  Libreria
+                </a>
+              </li>
+            </ul>
+            <!-- Seconda Ul con Crea Playlist Brani che ti piacciono I tuoi episodi -->
+            <ul class="nav w-100 d-flex flex-column">
+              <li class="nav-item text-center flex-fill min-width-0">
+                <a
+                  href="#"
+                  class="nav-link px-0 small text-white px-0 d-flex flex-row fs-4"
+                >
+                  <i class="bi bi-plus-square-fill me-3"></i>
+                  Crea Playlist
+                </a>
+              </li>
+              <li class="nav-item text-center flex-fill px-0 min-width-0">
+                <a
+                  href="#"
+                  class="nav-link px-0 small text-white d-flex flex-row align-items-center fs-4"
+                >
+                  <i class="bi bi-heart-fill me-3 text-troncate text-start"></i>
+                  Brani che ti piacciono
+                </a>
+              </li>
+              <li class="nav-item text-center flex-fill px-0 min-width-0">
+                <a
+                  href="#"
+                  class="nav-link px-0 small text-white d-flex flex-row fs-4"
+                >
+                  <i class="bi bi-bookmark-fill me-3"></i>
+                  I tuoi episodi
+                </a>
+              </li>
+            </ul>
+            <hr class="text-secondary" />
+            <div class="elenco-playlist">
+              <p class="text-secondary">Playlist</p>
+              <p class="text-secondary">Playlist</p>
+              <p class="text-secondary">Playlist</p>
+              <p class="text-secondary">Playlist</p>
+              <p class="text-secondary">Playlist</p>
+              <p class="text-secondary">Playlist</p>
+              <p class="text-secondary">Playlist</p>
+              <p class="text-secondary">Playlist</p>
+              <p class="text-secondary">Playlist</p>
+              <p class="text-secondary">Playlist</p>
+            </div>
+          </div>
+          <!-- Parte Centrale -->
+          <div class="col-12 col-lg-8 bg-dark p-0">
+            <div class="bg-dark text-white position-relative">
               <img
                 src="https://www.rollingstone.it/wp-content/uploads/2022/07/pinguini-tattici-nucleari.jpg"
-                class="rounded-circle me-3 position-relative"
-                height="100"
-                width="80"
-                alt="Avatar"
-                id="Avatar"
+                class="img-fluid"
+                width="100%"
+                alt="Album"
+                id="bgArtist"
+                style="height: 25em"
               />
-              <span
-                class="position-absolute bg-success border border-2 text-dark rounded-circle"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-suit-heart-fill"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1"
-                  />
-                </svg>
-              </span>
-              <div class="d-flex flex-column align-self-center">
-                <h5 class="d-lg-none">Brani che ti piacciono</h5>
-                <p class="d-lg-none">Brani dei "Artista"</p>
-                <p class="d-lg-block d-none">Hai messo like a tot brani</p>
-                <p class="d-lg-block d-none">"Artista"</p>
-              </div>
-            </div>
-          </section>
-        </div>
-        <div class="col order-lg-0 col-lg-7">
-          <article class="container-fluid mt-5">
-            <h1>Popolari</h1>
-            <div id="content">
-              <!--<div class="d-flex align-items-center my-4">
-                <h4>1</h4>
-                <img
-                  src="https://www.rollingstone.it/wp-content/uploads/2022/07/pinguini-tattici-nucleari.jpg"
-                  class="ms-4"
-                  height="100"
-                  width="100"
-                  alt="Album"
-                />
-                <div class="d-flex flex-column flex-grow-1 ms-4 flex-lg-row">
-                  <h5 style="width: 15em">Titolo</h5>
-
-                  <p style="width: 5em" class="flex-lg-grow-1">Views</p>
-                  <p class="d-none d-lg-block">Minutes</p>
-                </div>
+              <div class="position-absolute top-0 start-0 container-fluid pt-2">
                 <button
-                  type="button"
-                  class="btn btn-dark text-secondary d-lg-none"
+                  class="btn btn-dark opacity-50 text-white rounded-circle px-3 py-2 d-lg-none"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
-                    class="bi bi-three-dots-vertical"
+                    class="bi bi-arrow-left-short"
                     viewBox="0 0 16 16"
                   >
                     <path
-                      d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
+                      fill-rule="evenodd"
+                      d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"
                     />
                   </svg>
                 </button>
-              </div> -->
+                <div class="d-none d-lg-block">
+                  <ul
+                    class="d-flex flex-row align-items-center navbar-nav me-auto mb-2 mb-md-0"
+                  >
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#"
+                        ><i class="bi bi-chevron-left"></i
+                      ></a>
+                    </li>
+                    <li class="nav-item ms-3">
+                      <a class="nav-link" href="#"
+                        ><i class="bi bi-chevron-right"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="position-absolute bottom-0 start-0 container-fluid">
+                <h1 id="nomeArtista">Nome Artista</h1>
+              </div>
             </div>
-
-            <div class="text-center text-lg-start">
-              <button type="button" class="btn btn-dark text-white px-3 py-2">
-                VISUALIZZA ALTRO
+            <section class="container-fluid d-flex my-3">
+              <button
+                type="button"
+                class="btn btn-dark text-white rounded rounded-pill px-3 py-2 order-lg-1"
+              >
+                Segui
               </button>
+              <button
+                type="button"
+                class="btn btn-dark text-secondary px-3 py-2 order-lg-3 d-lg-none"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-three-dots-vertical"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
+                  />
+                </svg></button
+              ><button
+                type="button"
+                class="btn btn-dark text-secondary px-3 py-2 order-lg-3 d-none d-lg-block"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-three-dots"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
+                  />
+                </svg>
+              </button>
+              <button
+                type="button"
+                class="btn btn-dark text-success px-3 py-2 ms-auto d-lg-none"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-shuffle"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.6 9.6 0 0 0 7.556 8a9.6 9.6 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.6 10.6 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.6 9.6 0 0 0 6.444 8a9.6 9.6 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5"
+                  />
+                  <path
+                    d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192"
+                  />
+                </svg>
+              </button>
+              <button
+                type="button"
+                class="btn btn-success rounded rounded-circle px-3 py-2 order-lg-0"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-play-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"
+                  />
+                </svg>
+              </button>
+            </section>
+            <div class="d-lg-flex">
+              <div class="col order-lg-1 col-lg-4">
+                <section class="container-fluid mt-5 ms-lg-5">
+                  <h1 class="mb-lg-4 d-lg-block d-none">
+                    Brani che ti piacciono
+                  </h1>
+                  <div class="d-flex">
+                    <img
+                      src="https://www.rollingstone.it/wp-content/uploads/2022/07/pinguini-tattici-nucleari.jpg"
+                      class="rounded-circle me-3 position-relative"
+                      height="100"
+                      width="80"
+                      alt="Avatar"
+                      id="Avatar"
+                    />
+                    <span
+                      class="position-absolute bg-success border border-2 text-dark rounded-circle"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-suit-heart-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1"
+                        />
+                      </svg>
+                    </span>
+                    <div class="d-flex flex-column align-self-center">
+                      <h5 class="d-lg-none">Brani che ti piacciono</h5>
+                      <p class="d-lg-none">Brani dei "Artista"</p>
+                      <p class="d-lg-block d-none">
+                        Hai messo like a tot brani
+                      </p>
+                      <p class="d-lg-block d-none">"Artista"</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="col order-lg-0 col-lg-7">
+                <article class="container-fluid mt-5">
+                  <h1>Popolari</h1>
+                  <div id="content">
+                    <div class="d-flex align-items-center my-4">
+                      <h4>1</h4>
+                      <img
+                        src="https://www.rollingstone.it/wp-content/uploads/2022/07/pinguini-tattici-nucleari.jpg"
+                        class="ms-4"
+                        height="100"
+                        width="100"
+                        alt="Album"
+                      />
+                      <div
+                        class="d-flex flex-column flex-grow-1 ms-4 flex-lg-row"
+                      >
+                        <h5 style="width: 15em">Titolo</h5>
+
+                        <p style="width: 5em" class="flex-lg-grow-1">Views</p>
+                        <p class="d-none d-lg-block">Minutes</p>
+                      </div>
+                      <button
+                        type="button"
+                        class="btn btn-dark text-secondary d-lg-none"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-three-dots-vertical"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="text-center text-lg-start">
+                    <button
+                      type="button"
+                      class="btn btn-dark text-white px-3 py-2"
+                    >
+                      VISUALIZZA ALTRO
+                    </button>
+                  </div>
+                </article>
+              </div>
             </div>
-          </article>
+          </div>
+          <!-- Lista amici (solo desktop) a destra -->
+          <div
+            class="col col-lg-2 d-none d-lg-block bg-black d-flex flex-column text-white ps-4 pt-5"
+          >
+            <div
+              class="amici-header d-flex flex-row justify-content-between align-items-center"
+            >
+              <h4 class="m-0">Attività Amici</h4>
+              <div class="icone-amici">
+                <i class="bi bi-person-plus fs-4 me-2"></i>
+                <i class="bi bi-x-lg fs-4"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Player Desktop -->
+      <div
+        class="position-fixed bottom-0 start-0 end-0 bg-dark text-white px-4 py-2 d-none d-lg-flex align-items-center"
+      >
+        <!-- a sinistra copertina e info brano -->
+        <div
+          class="d-flex align-items-center flex-grow-1 z-3 justify-content-start w-25"
+        >
+          <img
+            src="./assets/imgs/main/image-1.jpg"
+            alt="Copertina album"
+            class="img-fluid rounded me-3 w-15"
+          />
+          <div class="text-truncate">
+            <div class="fw-semibold">Canzone</div>
+            <div class="text-secondary small">Artista</div>
+          </div>
+          <i class="bi bi-heart ms-3"></i>
+        </div>
+
+        <!--  controlli + barra di progresso della canzone -->
+        <div
+          class="d-flex flex-column align-items-center w-50 flex-grow-2 justify-content-center w-50"
+        >
+          <!-- Controlli del player-->
+          <div
+            class="d-flex align-items-center justify-content-center gap-3 mb-1"
+          >
+            <i class="bi bi-shuffle"></i>
+            <i class="bi bi-skip-start-fill"></i>
+            <i class="bi bi-play-circle-fill fs-3"></i>
+            <i class="bi bi-skip-end-fill"></i>
+            <i class="bi bi-shuffle"></i>
+          </div>
+          <!-- Bbarra di progresso della canzone -->
+          <div
+            class="d-flex align-items-center w-100 justify-content-center gap-2"
+          >
+            <span class="small text-secondary">0:00</span>
+            <div class="progress flex-grow-1 progresso-canzone">
+              <div class="progress-bar" role="progressbar"></div>
+            </div>
+            <span class="small text-secondary">4:00</span>
+          </div>
+        </div>
+
+        <!-- Sezione destra: opzioni + volume -->
+        <div
+          class="d-flex align-items-center gap-3 flex-grow-1 justify-content-end h-100 w-25"
+        >
+          <i class="bi bi-pen"></i>
+          <i class="bi bi-list"></i>
+          <i class="bi bi-pc-display"></i>
+          <i class="bi bi-volume-up"></i>
+          <div class="progress volume">
+            <div class="progress-bar bg-success" role="progressbar"></div>
+          </div>
+          <i class="bi bi-arrows-fullscreen"></i>
         </div>
       </div>
     </main>
