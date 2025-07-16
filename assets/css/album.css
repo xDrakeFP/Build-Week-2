@@ -2,15 +2,12 @@ body {
   background-color: #000000 !important; /* sfondo quasi nero */
 }
 
-
-.sidebar-left, .sidebar-right {
-  background-color: #202020; /* sfondo delle colonne laterali */
-  height: 100vh; /* altezza delle colonne laterali */
+.sidebar-left,
+.sidebar-right {
+  background-color: #202020; /* sfondo delle colonne laterali */ /* altezza delle colonne laterali */
 }
 
-
 /* __________________________ */
-
 
 .main-content {
   background-color: #202020; /* sfondo della colonna centrale */
@@ -19,15 +16,14 @@ body {
 
 #container-img {
   position: relative;
-    height: 500px;
-    background: linear-gradient(to bottom, #d6bd4d, #000000);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-left: 10px;
+  height: 500px;
+  background: linear-gradient(to bottom, #d6bd4d, #000000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 10px;
 }
-
 
 .img-album {
   width: 300px;
@@ -41,100 +37,96 @@ body {
     margin: 10px 30px;
     width: 35px !important;
     height: 35px !important;
-}
+  }
   .img-album {
     width: 220px;
     height: 220px;
     margin-top: 50px;
-position: static;
+    position: static;
     top: 0;
     transition: transform 0.1s;
   }
-    .scrolled .img-album {
+  .scrolled .img-album {
     transform: scale(0);
   }
   .traccia {
-gap: 50%;
-width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  
-}
-.traccia-int{      display: contents;}
+    gap: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .traccia-int {
+    display: contents;
+  }
 }
 
 @media (min-width: 992px) {
-
-  
-.title-block{
-      margin: 17% -9%;
-}
-  #container-img{
+  .title-block {
+    margin: 17% -9%;
+  }
+  #container-img {
     position: relative;
-        color: white;
-        /* height: 100vh; */
-        background: linear-gradient(to bottom, #d6bd4d, #000000);
-        display: flex;
-        align-items: flex-start;
-        flex-direction: row;
-        margin-left: 10px;
-        justify-content: flex-start;
-    }
+    color: white;
+    /* height: 100vh; */
+    background: linear-gradient(to bottom, #d6bd4d, #000000);
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-left: 10px;
+    justify-content: flex-start;
+  }
 
-
-    .sex-titolo-album {
-        margin-top: 179px;
+  .sex-titolo-album {
+    margin-top: 179px;
     margin-left: -90px;
-    }
-    .artista-info{
-      font-size: 60%
-    }
-    .img-album{
-        scale: 0.6;
-        margin-left: -4%;
-        margin-top: 0%;
-    }
-    .tipo-album-d{
-      font-size: small;
-      font-weight: bold;
-    }
-    .titolo-album-d{
-          font-size: 380%;
-
-    }
-    #titolo-album{
-      font-size: 450%;
-    }
-    .info-album-artista{
-        /* scale: 0.6; */
-        display: flex;
-    }
-    .azioni-album-d{
-      padding: 20px 0px 0px 20px;
-    
-    }
-    .lettore-tracce-d{
-      background-color: #0000002d;
-      transform: translate(0px, -194px);
-    }
-.traccia {
-  /* gap: 50%; */
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  /* border-bottom: 1px solid #333; */
-}
-.titolo-traccia {
-  margin: 0px;
-  padding:0px;
-}
-.traccia-int{
+  }
+  .artista-info {
+    font-size: 60%;
+  }
+  .img-album {
+    scale: 0.6;
+    margin-left: -4%;
+    margin-top: 0%;
+  }
+  .tipo-album-d {
+    font-size: small;
+    font-weight: bold;
+  }
+  .titolo-album-d {
+    font-size: 380%;
+  }
+  #titolo-album {
+    font-size: 450%;
+  }
+  .info-album-artista {
+    /* scale: 0.6; */
+    display: flex;
+  }
+  .azioni-album-d {
+    padding: 20px 0px 0px 20px;
+  }
+  .lettore-tracce-d {
+    background-color: #0000002d;
+    transform: translate(0px, -194px);
+  }
+  .traccia {
+    /* gap: 50%; */
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* border-bottom: 1px solid #333; */
+  }
+  .titolo-traccia {
+    margin: 0px;
+    padding: 0px;
+  }
+  .traccia-int {
     display: flex;
     color: white;
     gap: 60%;
@@ -142,31 +134,31 @@ width: 100%;
     flex-direction: row;
     justify-content: center;
 
-     display: flex;
-  align-items: center;
-}
-.info-traccia{
- flex: 1;
-  min-width: 200px; /* o width: 200px */
-  padding-left: 10px ;
-}
-          /* 
+    display: flex;
+    align-items: center;
+  }
+  .info-traccia {
+    flex: 1;
+    min-width: 200px; /* o width: 200px */
+    padding-left: 10px;
+  }
+  /* 
            */
-.traccia-tab {
-  gap: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  /* border-bottom: 1px solid #333; */
-}
-.titolo-traccia-tab {
-  margin: 0px;
-  padding:0px;
-}
-.traccia-int-tab{
+  .traccia-tab {
+    gap: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* border-bottom: 1px solid #333; */
+  }
+  .titolo-traccia-tab {
+    margin: 0px;
+    padding: 0px;
+  }
+  .traccia-int-tab {
     display: flex;
     color: white;
     gap: 50%;
@@ -174,59 +166,52 @@ width: 100%;
     flex-direction: row;
     justify-content: center;
 
-     display: flex;
-  align-items: center;
-}
-.info-traccia-tab{
-  flex: 1;
-  min-width: 200px; /* o width: 200px */
-  padding-left: 10px ;
-}
+    display: flex;
+    align-items: center;
+  }
+  .info-traccia-tab {
+    flex: 1;
+    min-width: 200px; /* o width: 200px */
+    padding-left: 10px;
+  }
 
   .info-traccia-tab {
-  display: flex;
-  flex-direction: column;
-  margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+  }
+
+  .titolo-traccia-tab {
+    font-size: 16px;
+    color: #fff;
+  }
+
+  .artista-traccia-tab {
+    font-size: 14px;
+    color: #ccc;
+  }
+
+  .azioni-traccia-tab {
+    display: flex;
+    align-items: center;
+  }
+
+  .azioni-traccia-tab i {
+    font-size: 20px;
+  }
+  .tab {
+    opacity: 80%;
+  }
+
+  .separatore {
+    border-top: 1px solid #ffffff48;
+    margin: 0px 25px;
+  }
 }
-
-.titolo-traccia-tab {
-  font-size: 16px;
-  color: #fff;
-}
-
-.artista-traccia-tab {
-  font-size: 14px;
-  color: #ccc;
-}
-
-.azioni-traccia-tab {
-  display: flex;
-  align-items: center;
-}
-
-.azioni-traccia-tab i {
-  font-size: 20px;
-}
-.tab {
-  opacity: 80%;
-}
-
-.separatore {
-  border-top: 1px solid #ffffff48;
-  margin: 0px 25px;
-  
-}
-
-
-}
-
-
 
 /* ______________________________________ */
 
-
-
-  /* #titolo-album{
+/* #titolo-album{
     position: absolute;
         left: 651px;
     top: -179px;
@@ -238,16 +223,15 @@ width: 100%;
     top: -179px
   } */
 
-
 .sez-titolo-album {
-    color: #fff;
-    font-size: 12px;
-    font-weight: bold;
-    width: 90%;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  width: 90%;
 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .artista-info {
   display: flex;
@@ -275,7 +259,6 @@ width: 100%;
 
 /* _______________________ */
 
-
 .azioni-album {
   display: flex;
   justify-content: space-between;
@@ -285,14 +268,13 @@ width: 100%;
 }
 
 .azioni-album i {
-    font-size: 24px;
+  font-size: 24px;
 }
 .azioni-sinistra i {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 .azioni-destra i {
 }
-
 
 .azioni-sinistra {
   display: flex;
@@ -300,15 +282,13 @@ width: 100%;
   gap: 10%;
 }
 .azioni-destra {
-   display: flex;
+  display: flex;
   align-items: center;
   gap: 20px;
 }
 
-
 .btn-play {
-    
-  background-color: #34C759;
+  background-color: #34c759;
   border: none;
   border-radius: 50%;
   width: 40px;
@@ -318,17 +298,12 @@ width: 100%;
   align-items: center;
 }
 
-
 /* __________________________ */
 
-
 #tracce-album {
-    width: 100%;
-    background: none !important;
-    
+  width: 100%;
+  background: none !important;
 }
-
-
 
 .info-traccia {
   display: flex;
