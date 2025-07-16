@@ -374,16 +374,17 @@
       >
         <!-- a sinistra copertina e info brano -->
         <div
-          class="d-flex align-items-center flex-grow-1 z-3 justify-content-start w-25"
+          class="titleTrack d-flex align-items-center flex-grow-1 z-3 justify-content-start w-25"
         >
           <img
+            id="playerImg"
             src="./assets/imgs/main/image-1.jpg"
             alt="Copertina album"
             class="img-fluid rounded me-3 w-15"
           />
           <div class="text-truncate">
-            <div class="fw-semibold">Canzone</div>
-            <div class="text-secondary small">Artista</div>
+            <div id="playerTitle" class="fw-semibold">Canzone</div>
+            <div id="playerArtist" class="text-secondary small">Artista</div>
           </div>
           <i class="bi bi-heart ms-3"></i>
         </div>
@@ -395,6 +396,7 @@
           <!-- Controlli del player-->
           <div
             class="d-flex align-items-center justify-content-center gap-3 mb-1"
+            id="preview"
           >
             <i class="bi bi-shuffle"></i>
             <i class="bi bi-skip-start-fill"></i>
@@ -402,7 +404,7 @@
             <i class="bi bi-skip-end-fill"></i>
             <i class="bi bi-shuffle"></i>
           </div>
-          <!-- Bbarra di progresso della canzone -->
+          <!-- Barra di progresso della canzone -->
           <div
             class="d-flex align-items-center w-100 justify-content-center gap-2"
           >
