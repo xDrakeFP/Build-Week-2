@@ -6,8 +6,8 @@ const endSearch =
 const endAlbum = "https://striveschool-api.herokuapp.com/api/deezer/album";
 
 const endArtist = "https://striveschool-api.herokuapp.com/api/deezer/artist";
-const headerImg = document.querySelector("header img");
-const headerArtist = document.querySelector("header h1");
+const headerImg = document.getElementById("bgArtist");
+const headerArtist = document.getElementById("nomeArtista");
 const content = document.getElementById("content");
 const mainImgs = document.querySelectorAll("main img");
 const Avatar = document.getElementById("Avatar");
