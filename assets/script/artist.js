@@ -52,7 +52,9 @@ const getTracks = function () {
         content.innerHTML += `
   <div class="d-flex align-items-center my-4">
   <span style="width:1em" class="fs-4">${i + 1}</span>
-    <img src="${imageUrl}" class="ms-4" height="100" width="100" alt="Album" />
+    <a href='./album.html?id=${data1.data[
+      i
+    ].album.id.toString()}'><img src="${imageUrl}" class="ms-4" height="100" width="100" alt="Album" /></a>
     <div class="d-flex flex-column flex-grow-1 ms-4 flex-xxl-row">
       <a href='javascript:void(0)' class='click text-decoration-none text-white'
         onclick="player('${title}', '${artist}', '${imageUrl}')">
