@@ -6,6 +6,7 @@ const endSearch =
 const endAlbum = "https://striveschool-api.herokuapp.com/api/deezer/album";
 
 const endArtist = "https://striveschool-api.herokuapp.com/api/deezer/artist";
+
 const headerImg = document.getElementById("bgArtist");
 const headerArtist = document.getElementById("nomeArtista");
 const content = document.getElementById("content");
@@ -99,7 +100,7 @@ const getArtist = function () {
     .then((data) => {
       console.log(data);
       tracklist = data.tracklist;
-
+      console.log(tracklist);
       headerImg.setAttribute("src", data.picture_big);
       Avatar.setAttribute("src", data.picture_big);
       headerArtist.innerText = `${data.name}`;
@@ -259,4 +260,8 @@ const player = function (title, artist, imageUrl) {
   document.getElementById("playerImg").src = imageUrl;
   document.getElementById("playerTitle").innerText = title;
   document.getElementById("playerArtist").innerText = artist;
+};
+
+const goBack = function () {
+  window.history.back();
 };

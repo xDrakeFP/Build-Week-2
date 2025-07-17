@@ -30,7 +30,11 @@
           </a>
         </li>
         <li class="nav-item text-center flex-fill px-0 min-width-0">
-          <a href="#" class="nav-link px-0 small text-white d-block">
+          <a
+            id="showBar"
+            href="#"
+            class="nav-link px-0 small text-white d-block"
+          >
             <i class="bi bi-search d-block fs-5"></i>
             Cerca
           </a>
@@ -64,6 +68,7 @@
               </li>
               <li class="nav-item text-center flex-fill px-0 min-width-0">
                 <a
+                  id="showBarMob"
                   href="#"
                   class="nav-link px-0 small text-white d-flex flex-row align-items-center fs-4"
                 >
@@ -131,6 +136,36 @@
           <div class="col-lg-8 col-12 main-content bg-dark">
             <!-- contenuto della colonna centrale -->
             <div class="col-lg-12 col-12 bg-black">
+              <!--barra di ricerca-->
+              <div class="container-fluid my-3 d-none" id="searchBar">
+                <form id="searchForm" class="d-flex" role="search">
+                  <input
+                    class="form-control me-2"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                  <button class="btn btn-outline-success" type="submit">
+                    Search
+                  </button>
+                </form>
+              </div>
+              <!--fine barra di ricerca-->
+
+              <!--risultati ricerca-->
+              <div class="container d-none" id="Risultati">
+                <div class="d-flex mt-5 align-items-center">
+                  <h1 class="text-white">Risultati Ricerca</h1>
+                  <a
+                    href="javascript:void(0)"
+                    onclick="closeSearch()"
+                    class="text-light"
+                    ><i class="bi bi-x-lg fs-4 ms-2"></i
+                  ></a>
+                </div>
+                <div id="risultatiRicerca" class="mb-4"></div>
+                <h1 class="text-white">Fine Risultati Ricerca</h1>
+              </div>
               <div class="arrows" style="position: relative; z-index: 1">
                 <div
                   style="
@@ -142,7 +177,7 @@
                     z-index: 1;
                   "
                 >
-                  <a href="index.html">
+                  <a href="javascript:void(0)" onclick="goBack()">
                     <img
                       src="assets/imgs/album/freccia1.PNG"
                       style="
@@ -162,6 +197,8 @@
                   />
                 </div>
               </div>
+
+              <!--fine risultati ricerca-->
               <div id="container-img" style="margin: 0px">
                 <img
                   src="assets\imgs\album\immaginealbum.jpg"
@@ -551,14 +588,15 @@
           style="height: 100%"
         >
           <img
+            id="playerImg"
             src="./assets/imgs/main/image-1.jpg"
             alt="Copertina album"
             class="img-fluid rounded me-3 w-15"
             style="height: 4em"
           />
           <div class="text-truncate">
-            <div class="fw-semibold">Canzone</div>
-            <div class="text-secondary small">Artista</div>
+            <div class="fw-semibold" id="playerTitle">Canzone</div>
+            <div class="text-secondary small" id="playerArtist">Artista</div>
           </div>
           <i class="bi bi-heart ms-3"></i>
         </div>
