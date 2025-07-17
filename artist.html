@@ -348,12 +348,21 @@
                   <h1>Popolari</h1>
                   <div id="content"></div>
 
-                  <div class="text-center text-lg-start">
+                  <div class="text-center text-lg-start mb-5">
                     <button
+                      onclick="showMore()"
+                      id="show"
                       type="button"
                       class="btn btn-dark text-white px-3 py-2"
                     >
-                      VISUALIZZA ALTRO
+                      VISUALIZZA ALTRO</button
+                    ><button
+                      onclick="getTracks()"
+                      type="button"
+                      id="hide"
+                      class="btn btn-dark text-white px-3 py-2 d-none"
+                    >
+                      NASCONDI
                     </button>
                   </div>
                 </article>
@@ -378,7 +387,7 @@
       </div>
       <!-- Player Desktop -->
       <div
-        class="position-fixed bottom-0 start-0 end-0 bg-dark text-white px-4 py-2 d-none d-lg-flex align-items-center"
+        class="position-sticky bottom-0 start-0 end-0 bg-dark text-white px-4 py-2 d-none d-lg-flex align-items-center"
       >
         <!-- a sinistra copertina e info brano -->
         <div
