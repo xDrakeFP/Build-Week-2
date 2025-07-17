@@ -65,7 +65,10 @@ body {
 
 @media (min-width: 992px) {
   .title-block {
-    margin: 17% -9%;
+    /* margin: 17% -9%; */
+    margin: 10px;
+    margin-top: 7em;
+
   }
   #container-img {
     position: relative;
@@ -74,6 +77,7 @@ body {
     background: linear-gradient(to bottom, #d6bd4d, #000000);
     display: flex;
     align-items: flex-start;
+    /* align-items: center; */
     flex-direction: row;
     margin-left: 10px;
     justify-content: flex-start;
@@ -87,16 +91,26 @@ body {
     font-size: 60%;
   }
   .img-album {
-    scale: 0.6;
+    /* scale: 0.6;
     margin-left: -4%;
-    margin-top: 0%;
+    margin-top: 0%; */
+
+    height: 150px;
+    /* transform: scale(0.786); */
+    width: 150px;
+    margin: 71px 15px 15px 29px;
   }
   .tipo-album-d {
     font-size: small;
     font-weight: bold;
+    
   }
   .titolo-album-d {
-    font-size: 380%;
+    /* font-size: 380%; */
+    width: 600px;
+    width: fit-content;
+
+
   }
   #titolo-album {
     font-size: 450%;
@@ -205,7 +219,16 @@ body {
 
   .separatore {
     border-top: 1px solid #ffffff48;
-    margin: 0px 25px;
+    margin: 0px 25px 20px 25px;
+  }
+  .icone-amici {
+        display: flex;
+  }
+  .m-0{     /* ATTIVITà AMICI  */
+    font-size: medium;
+  }
+  .fs-4 {
+    font-size: 1rem !important;
   }
 }
 
