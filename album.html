@@ -62,7 +62,7 @@
                   href="./index.html"
                   class="nav-link px-0 small text-white px-0 d-flex flex-row fs-4"
                 >
-                  <i class="bi bi-house-door- d-block me-3"></i>
+                  <i class="bi bi-house-door d-block me-3"></i>
                   Home
                 </a>
               </li>
@@ -133,7 +133,7 @@
           <!-- 
           
           -->
-          <div class="col-lg-8 col-12 main-content bg-dark">
+          <div class="col-lg-7 col-12 main-content bg-dark">
             <!-- contenuto della colonna centrale -->
             <div class="col-lg-12 col-12 bg-black">
               <!--barra di ricerca-->
@@ -175,6 +175,7 @@
                     display: flex;
                     gap: 10px;
                     z-index: 1;
+                    align-items: center;
                   "
                 >
                   <a href="javascript:void(0)" onclick="goBack()">
@@ -315,11 +316,11 @@
                 <!-- TRACCE ALBUM -->
 
                 <section id="tracce-album">
-                  <div
+                  <!-- <div
                     class="tab traccia-tab d-none d-lg-block"
                     style="display: flex !important"
-                  >
-                    <div
+                  > -->
+                  <!-- <div
                       class="tab traccia-int-tab d-none d-lg-block"
                       style="display: flex !important"
                     >
@@ -355,13 +356,52 @@
                           style="color: #ccc"
                         ></i>
                       </div>
+                    </div> -->
+                  <!--  -->
+                  <div
+                    class="row d-none d-lg-block"
+                    style="
+                      height: 3em;
+                      --bs-gutter-x: 1.5rem !important;
+                      --bs-gutter-y: 0 !important;
+                      display: flex !important;
+                      flex-wrap: wrap !important;
+                      margin-top: calc(-1 * var(--bs-gutter-y)) !important;
+                      margin-right: calc(-0.5 * var(--bs-gutter-x)) !important;
+                      margin-left: calc(-0.5 * var(--bs-gutter-x)) !important;
+                      padding: 1em 1em 0px 1em;
+                    "
+                  >
+                    <div class="col d-none d-lg-block col-lg-1">
+                      <p style="color: #6e6e6e" class="text-center">#</p>
+                    </div>
+                    <div class="col col-11 col-lg-5 d-none d-lg-block">
+                      <p style="color: #6e6e6e" class="mb-1">TITOLO</p>
+                      <p class=""></p>
+                    </div>
+
+                    <div class="col d-none d-lg-block col-lg-3">
+                      <p style="color: #6e6e6e" class="text-center">
+                        RIPRODUZIONI
+                      </p>
+                    </div>
+                    <div
+                      class="col d-none d-lg-block col-lg-3 bi bi-clock"
+                      style="
+                        text-align: center;
+                        font-size: 0.9em !important;
+                        color: #6e6e6e !important;
+                      "
+                    >
+                      <p class="text-secondary text-center"></p>
                     </div>
                   </div>
+                  <!-- </div> -->
                   <!--  -->
                   <div class="separatore"></div>
                   <!--  -->
 
-                  <div class="traccia">
+                  <!-- <div class="traccia">
                     <div class="traccia-int">
                       <div
                         style="
@@ -388,7 +428,7 @@
                         ></i>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                   <div id="lista" class="container px-3"></div>
                   <!-- <div class="traccia">
                     <div class="traccia-int">
