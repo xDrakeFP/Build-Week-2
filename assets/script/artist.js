@@ -1,19 +1,19 @@
 const parameters = new URLSearchParams(window.location.search);
-const artistId = parameters.get("id");
+const artistId = parameters.get('id');
 
 const endSearch =
-  " https://striveschool-api.herokuapp.com/api/deezer/search?q=";
-const endAlbum = "https://striveschool-api.herokuapp.com/api/deezer/album";
+  ' https://striveschool-api.herokuapp.com/api/deezer/search?q=';
+const endAlbum = 'https://striveschool-api.herokuapp.com/api/deezer/album';
 
-const endArtist = "https://striveschool-api.herokuapp.com/api/deezer/artist";
-const headerImg = document.getElementById("bgArtist");
-const headerArtist = document.getElementById("nomeArtista");
-const content = document.getElementById("content");
-const mainImgs = document.querySelectorAll("main img");
-const Avatar = document.getElementById("Avatar");
-let imgSrc = "";
+const endArtist = 'https://striveschool-api.herokuapp.com/api/deezer/artist';
+const headerImg = document.getElementById('bgArtist');
+const headerArtist = document.getElementById('nomeArtista');
+const content = document.getElementById('content');
+const mainImgs = document.querySelectorAll('main img');
+const Avatar = document.getElementById('Avatar');
+let imgSrc = '';
 
-let tracklist = "";
+let tracklist = '';
 
 const getTracks = function () {
   fetch(tracklist)
@@ -21,7 +21,7 @@ const getTracks = function () {
       if (res.ok) {
         return res.json();
       } else {
-        throw new Error("errore");
+        throw new Error('errore');
       }
     })
     .then((data1) => {
@@ -30,14 +30,14 @@ const getTracks = function () {
         let duration = data1.data[i].duration;
         let minutes = Math.floor(duration / 60);
         if (minutes < 10) {
-          minutes = "0" + minutes.toString();
+          minutes = '0' + minutes.toString();
         } else {
           minutes = minutes;
         }
 
         let seconds = Math.floor(duration % 60);
         if (seconds < 10) {
-          seconds = "0" + seconds.toString();
+          seconds = '0' + seconds.toString();
         } else {
           seconds = seconds;
         }
@@ -88,20 +88,20 @@ const getTracks = function () {
 };
 
 const getArtist = function () {
-  fetch(endArtist + "/" + artistId)
+  fetch(endArtist + '/' + artistId)
     .then((res) => {
       if (res.ok) {
         return res.json();
       } else {
-        throw new Error("errore");
+        throw new Error('errore');
       }
     })
     .then((data) => {
       console.log(data);
       tracklist = data.tracklist;
 
-      headerImg.setAttribute("src", data.picture_big);
-      Avatar.setAttribute("src", data.picture_big);
+      headerImg.setAttribute('src', data.picture_big);
+      Avatar.setAttribute('src', data.picture_big);
       headerArtist.innerText = `${data.name}`;
 
       getTracks();
@@ -114,22 +114,22 @@ const getArtist = function () {
 getArtist();
 
 // funzione di ricerca
-const showBarBtn = document.getElementById("showBar");
-const searchBar = document.getElementById("searchBar");
-const showBarMob = document.getElementById("showBarMob");
-const risultatiRicerca = document.getElementById("risultatiRicerca");
-const searchForm = document.getElementById("searchForm");
-const searchInput = document.querySelector("form input");
-const Risultati = document.getElementById("Risultati");
+const showBarBtn = document.getElementById('showBar');
+const searchBar = document.getElementById('searchBar');
+const showBarMob = document.getElementById('showBarMob');
+const risultatiRicerca = document.getElementById('risultatiRicerca');
+const searchForm = document.getElementById('searchForm');
+const searchInput = document.querySelector('form input');
+const Risultati = document.getElementById('Risultati');
 
-showBarBtn.addEventListener("click", (e) => {
+showBarBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  searchBar.classList.toggle("d-none");
+  searchBar.classList.toggle('d-none');
 });
 
-showBarMob.addEventListener("click", (e) => {
+showBarMob.addEventListener('click', (e) => {
   e.preventDefault();
-  searchBar.classList.toggle("d-none");
+  searchBar.classList.toggle('d-none');
 });
 
 /* searchForm.addEventListener("submit", (e) => {
@@ -187,30 +187,30 @@ showBarMob.addEventListener("click", (e) => {
     });
 }); */
 
-searchForm.addEventListener("submit", (e) => {
+searchForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  Risultati.classList.remove("d-none");
+  Risultati.classList.remove('d-none');
   fetch(endSearch + searchInput.value)
     .then((res) => {
       if (res.ok) {
         return res.json();
       } else {
-        throw new Error("errore");
+        throw new Error('errore');
       }
     })
     .then((data) => {
       console.log(data);
-      risultatiRicerca.innerHTML = "";
+      risultatiRicerca.innerHTML = '';
       for (let i = 0; i < data.data.length; i++) {
         let minutes = Math.floor(data.data[i].duration / 60);
         let seconds = Math.floor(data.data[i].duration % 60);
         if (minutes < 10) {
-          minutes = "0" + minutes.toString();
+          minutes = '0' + minutes.toString();
         } else {
           minutes = minutes;
         }
         if (seconds < 10) {
-          seconds = "0" + seconds.toString();
+          seconds = '0' + seconds.toString();
         } else {
           seconds = seconds;
         }
@@ -249,14 +249,14 @@ searchForm.addEventListener("submit", (e) => {
 });
 
 const closeSearch = function () {
-  Risultati.classList.add("d-none");
-  risultatiRicerca.innerHTML = "";
+  Risultati.classList.add('d-none');
+  risultatiRicerca.innerHTML = '';
 };
 //Funzione per caricare sulla barra player un altra traccia
-const addTitile = document.querySelector("click");
+const addTitile = document.querySelector('click');
 
 const player = function (title, artist, imageUrl) {
-  document.getElementById("playerImg").src = imageUrl;
-  document.getElementById("playerTitle").innerText = title;
-  document.getElementById("playerArtist").innerText = artist;
+  document.getElementById('playerImg').src = imageUrl;
+  document.getElementById('playerTitle').innerText = title;
+  document.getElementById('playerArtist').innerText = artist;
 };
