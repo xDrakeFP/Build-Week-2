@@ -278,28 +278,7 @@
                 </div>
               </div>
 
-              <div class="row g-1" id="mainRow">
-                <!--
-                <div class="col-6 col-md-4">
-                  <div
-                    class="card flex-row align-items-center bg-dark text-white border-0"
-                  >
-                    <img
-                      src="./assets/imgs/main/image-1.jpg"
-                      alt="Foto Playlist"
-                      class="card-img-left img-fluid rounded-start"
-                      width="64"
-                      height="64"
-                    />
-                    <div class="card-body px-2 flex-grow-1">
-                      <p class="card-text text-truncate fw-semibold duerighe">
-                        Nome Playlist Placeholder
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                -->
-              </div>
+              <div class="row g-1" id="mainRow"></div>
               <!--risultati ricerca-->
               <div id="Risultati" class="d-flex mt-5 d-none align-items-center">
                 <h1>Risultati Ricerca</h1>
@@ -314,18 +293,7 @@
               <!--fine risultati ricerca-->
               <h2 class="my-5">Altro di ciò che ti piace</h2>
 
-              <div class="row g-2" id="secondRow">
-                <!--<div class="col col-12 col-md-6 col-lg-3">
-                  <a href="#" class="text-decoration-none text-white"
-                    ><div class="card bg-dark">
-                      <img src="..." class="card-img-top" alt="..." />
-                      <div class="card-body">
-                        <h5 class="card-title text-light">Card title</h5>
-                      </div>
-                    </div></a
-                  >
-                </div> -->
-              </div>
+              <div class="row g-2" id="secondRow"></div>
             </div>
           </div>
           <!-- Lista amici (solo desktop) a destra -->
@@ -368,25 +336,39 @@
         <div
           class="d-flex flex-column align-items-center w-50 flex-grow-2 justify-content-center w-50"
         >
-          <!-- Controlli del player-->
+          <!-- Player audio nascosto -->
+          <audio
+            id="audioPlayer"
+            src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+          ></audio>
+
+          <!-- Controlli del player -->
           <div
             class="d-flex align-items-center justify-content-center gap-3 mb-1"
           >
             <i class="bi bi-shuffle"></i>
             <i class="bi bi-skip-start-fill"></i>
-            <i class="bi bi-play-circle-fill fs-3"></i>
+            <i id="playPauseBtn" class="bi bi-play-circle-fill fs-3"></i>
             <i class="bi bi-skip-end-fill"></i>
             <i class="bi bi-shuffle"></i>
           </div>
-          <!-- Bbarra di progresso della canzone -->
+
+          <!-- Barra di progresso della canzone -->
           <div
             class="d-flex align-items-center w-100 justify-content-center gap-2"
           >
-            <span class="small text-secondary">0:00</span>
-            <div class="progress flex-grow-1 progresso-canzone">
-              <div class="progress-bar" role="progressbar"></div>
+            <span id="currentTime" class="small text-secondary">0:00</span>
+            <div
+              id="progressContainer"
+              class="progress flex-grow-1 progresso-canzone"
+            >
+              <div
+                id="progressBar"
+                class="progress-bar"
+                role="progressbar"
+              ></div>
             </div>
-            <span class="small text-secondary">4:00</span>
+            <span id="duration" class="small text-secondary">4:00</span>
           </div>
         </div>
 
@@ -412,5 +394,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="./assets/script/index.js"></script>
+    <script src="./assets/script/audio.js"></script>
   </body>
 </html>

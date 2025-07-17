@@ -378,28 +378,28 @@
       </div>
       <!-- Player Desktop -->
       <div
-        class="position-fixed bottom-0 start-0 end-0 bg-dark text-white px-4 py-2 d-none d-lg-flex align-items-center"
+        class="d-flex w-100 p-3 bg-dark text-white align-items-center"
+        id="audioPlayerContainer"
       >
         <!-- a sinistra copertina e info brano -->
-        <div
-          class="titleTrack d-flex align-items-center flex-grow-1 z-3 justify-content-start w-25"
-        >
+        <div class="d-flex align-items-center gap-3 w-25">
           <img
-            id="playerImg"
-            src="./assets/imgs/main/image-1.jpg"
-            alt="Copertina album"
-            class="img-fluid rounded me-3 w-15"
+            src="img/music1.jpg"
+            alt="cover"
+            id="trackCover"
+            width="50"
+            height="50"
           />
-          <div class="text-truncate">
-            <div id="playerTitle" class="fw-semibold">Canzone</div>
-            <div id="playerArtist" class="text-secondary small">Artista</div>
+          <div>
+            <div id="trackTitle" class="fw-bold">Nessuna traccia</div>
+            <div id="trackArtist" class="small text-muted">---</div>
           </div>
-          <i class="bi bi-heart ms-3"></i>
         </div>
 
         <!--  controlli + barra di progresso della canzone -->
         <div
-          class="d-flex flex-column align-items-center w-50 flex-grow-2 justify-content-center w-50"
+          class="d-flex align-items-center justify-content-center gap-3 mb-1"
+          id="preview"
         >
           <!-- Controlli del player-->
           <div
@@ -407,33 +407,56 @@
             id="preview"
           >
             <i class="bi bi-shuffle"></i>
-            <i class="bi bi-skip-start-fill"></i>
-            <i class="bi bi-play-circle-fill fs-3"></i>
-            <i class="bi bi-skip-end-fill"></i>
-            <i class="bi bi-shuffle"></i>
+            <i
+              class="bi bi-skip-start-fill"
+              id="prevBtn"
+              style="cursor: pointer"
+            ></i>
+            <i
+              class="bi bi-play-circle-fill fs-3"
+              id="playPauseBtn"
+              style="cursor: pointer"
+            ></i>
+            <i
+              class="bi bi-skip-end-fill"
+              id="nextBtn"
+              style="cursor: pointer"
+            ></i>
+            <i class="bi bi-repeat"></i>
           </div>
           <!-- Barra di progresso della canzone -->
           <div
             class="d-flex align-items-center w-100 justify-content-center gap-2"
           >
-            <span class="small text-secondary">0:00</span>
-            <div class="progress flex-grow-1 progresso-canzone">
-              <div class="progress-bar" role="progressbar"></div>
+            <span class="small text-secondary" id="currentTime">0:00</span>
+            <div
+              class="progress flex-grow-1 progresso-canzone"
+              id="progressContainer"
+              style="cursor: pointer; height: 5px"
+            >
+              <div
+                class="progress-bar bg-primary"
+                role="progressbar"
+                id="progressBar"
+                style="width: 0%"
+              ></div>
             </div>
-            <span class="small text-secondary">4:00</span>
+            <span class="small text-secondary" id="duration">0:00</span>
           </div>
         </div>
 
         <!-- Sezione destra: opzioni + volume -->
-        <div
-          class="d-flex align-items-center gap-3 flex-grow-1 justify-content-end h-100 w-25"
-        >
+        <div class="d-flex align-items-center gap-3 w-25 justify-content-end">
           <i class="bi bi-pen"></i>
           <i class="bi bi-list"></i>
           <i class="bi bi-pc-display"></i>
           <i class="bi bi-volume-up"></i>
-          <div class="progress volume">
-            <div class="progress-bar bg-success" role="progressbar"></div>
+          <div class="progress volume" style="width: 100px; height: 5px">
+            <div
+              class="progress-bar bg-success"
+              role="progressbar"
+              style="width: 80%"
+            ></div>
           </div>
           <i class="bi bi-arrows-fullscreen"></i>
         </div>
