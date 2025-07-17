@@ -18,6 +18,31 @@
   </head>
   <!--  -->
   <body>
+    <nav
+      id="navbar1"
+      class="navbar position-fixed bottom-0 start-0 end-0 p-2 rounded m-3 z-1 d-lg-none"
+    >
+      <ul class="nav w-100 d-flex">
+        <li class="nav-item text-center flex-fill min-width-0">
+          <a href="#" class="nav-link px-0 small text-white px-0 d-block">
+            <i class="bi bi-house-door-fill d-block fs-5"></i>
+            Home
+          </a>
+        </li>
+        <li class="nav-item text-center flex-fill px-0 min-width-0">
+          <a href="#" class="nav-link px-0 small text-white d-block">
+            <i class="bi bi-search d-block fs-5"></i>
+            Cerca
+          </a>
+        </li>
+        <li class="nav-item text-center flex-fill px-0 min-width-0">
+          <a href="#" class="nav-link px-0 small text-white d-block">
+            <i class="bi bi-collection d-block fs-5"></i>
+            Libreria
+          </a>
+        </li>
+      </ul>
+    </nav>
     <main>
       <div class="container-fluid p-0">
         <div class="row no-gutters">
@@ -33,7 +58,7 @@
                   href="./index.html"
                   class="nav-link px-0 small text-white px-0 d-flex flex-row fs-4"
                 >
-                  <i class="bi bi-house-door d-block me-3"></i>
+                  <i class="bi bi-house-door- d-block me-3"></i>
                   Home
                 </a>
               </li>
@@ -117,16 +142,19 @@
                     z-index: 1;
                   "
                 >
-                  <img
-                    src="assets/imgs/album/freccia1.PNG"
-                    style="
-                      width: 24px;
-                      height: 24px;
-                      opacity: 0.356;
-                      transform: rotate(180deg);
-                    "
-                    class="arrow-sx"
-                  />
+                  <a href="index.html">
+                    <img
+                      src="assets/imgs/album/freccia1.PNG"
+                      style="
+                        width: 24px;
+                        height: 24px;
+                        opacity: 0.356;
+                        transform: rotate(180deg);
+                      "
+                      class="arrow-sx"
+                    />
+                  </a>
+
                   <img
                     class="arrow-dx d-none d-lg-block"
                     src="assets/imgs/album/freccia1.PNG"
@@ -515,15 +543,18 @@
       </div>
       <div
         class="position-fixed bottom-0 start-0 end-0 bg-dark text-white px-4 py-2 d-none d-lg-flex align-items-center"
+        style="height: 5em"
       >
         <!-- a sinistra copertina e info brano -->
         <div
           class="d-flex align-items-center flex-grow-1 z-3 justify-content-start w-25"
+          style="height: 100%"
         >
           <img
             src="./assets/imgs/main/image-1.jpg"
             alt="Copertina album"
             class="img-fluid rounded me-3 w-15"
+            style="height: 4em"
           />
           <div class="text-truncate">
             <div class="fw-semibold">Canzone</div>
@@ -551,7 +582,10 @@
             class="d-flex align-items-center w-100 justify-content-center gap-2"
           >
             <span class="small text-secondary">0:00</span>
-            <div class="progress flex-grow-1 progresso-canzone">
+            <div
+              class="progress flex-grow-1 progresso-canzone bg-secondary"
+              style="height: 3px"
+            >
               <div class="progress-bar" role="progressbar"></div>
             </div>
             <span class="small text-secondary">4:00</span>
@@ -566,7 +600,7 @@
           <i class="bi bi-list"></i>
           <i class="bi bi-pc-display"></i>
           <i class="bi bi-volume-up"></i>
-          <div class="progress volume">
+          <div class="progress volume" style="height: 3px; width: 6em">
             <div class="progress-bar bg-success" role="progressbar"></div>
           </div>
           <i class="bi bi-arrows-fullscreen"></i>

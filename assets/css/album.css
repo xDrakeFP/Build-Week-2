@@ -129,7 +129,7 @@ body {
   .traccia-int {
     display: flex;
     color: white;
-    gap: 60%;
+    gap: 88%;
     align-items: center;
     flex-direction: row;
     justify-content: center;
@@ -161,7 +161,7 @@ body {
   .traccia-int-tab {
     display: flex;
     color: white;
-    gap: 50%;
+    gap: 75%;
     align-items: center;
     flex-direction: row;
     justify-content: center;
@@ -273,8 +273,8 @@ body {
 .azioni-sinistra i {
   margin-right: 20px;
 }
-.azioni-destra i {
-}
+/* .azioni-destra i {
+} */
 
 .azioni-sinistra {
   display: flex;
@@ -328,4 +328,10 @@ body {
 
 .azioni-traccia i {
   font-size: 20px;
+}
+
+#navbar1 {
+  background: linear-gradient(to bottom, rgb(0 0 0 / 77%), rgba(0, 0, 0, 1));
+    margin: 0px !important;
+    padding-bottom: 20px !important;
 }
