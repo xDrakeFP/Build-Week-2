@@ -17,6 +17,7 @@ let imgSrc = '';
 let tracklist = '';
 
 const getTracks = function () {
+  document.getElementById('hide').classList.toggle('d-none');
   fetch(tracklist)
     .then((res) => {
       if (res.ok) {
@@ -28,7 +29,6 @@ const getTracks = function () {
     .then((data1) => {
       console.log(data1);
       content.innerHTML = '';
-      show.classList.remove('d-none');
       for (let i = 0; i < 5; i++) {
         let duration = data1.data[i].duration;
         let minutes = Math.floor(duration / 60);
@@ -83,6 +83,8 @@ const getTracks = function () {
   </div>
 `;
       }
+
+      document.getElementById('show').classList.remove('d-none');
     })
 
     .catch((er) => {
@@ -333,16 +335,12 @@ const showMore = function () {
   </div>
 `;
       }
-      const show = document.getElementById('show');
-      console.log(show);
-      show.classList.toggle('d-none');
+
+      document.getElementById('show').classList.toggle('d-none');
+      document.getElementById('hide').classList.toggle('d-none');
     })
 
     .catch((er) => {
       console.log(er);
     });
 };
-
-const hide = document.getElementById('hide');
-console.log(hide);
-hide.classList.toggle('d-none');
