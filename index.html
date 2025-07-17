@@ -197,6 +197,21 @@
               <!-- Header -->
               <div class="row align-items-center">
                 <!-- Hero -->
+                <!--risultati ricerca-->
+                <div
+                  id="Risultati"
+                  class="d-flex mt-5 d-none align-items-center"
+                >
+                  <h1>Risultati Ricerca</h1>
+                  <a
+                    href="javascript:void(0)"
+                    onclick="closeSearch()"
+                    class="text-light"
+                    ><i class="bi bi-x-lg fs-4 ms-2"></i
+                  ></a>
+                </div>
+                <div id="risultatiRicerca" class="mb-4"></div>
+                <!--fine risultati ricerca-->
                 <div class="col-12">
                   <div class="card bg-black text-white border-0 px-2 p-4">
                     <div class="container position-relative">
@@ -321,13 +336,14 @@
           class="d-flex align-items-center flex-grow-1 z-3 justify-content-start w-25"
         >
           <img
+            id="playerImg"
             src="./assets/imgs/main/image-1.jpg"
             alt="Copertina album"
             class="img-fluid rounded me-3 w-15"
           />
           <div class="text-truncate">
-            <div class="fw-semibold">Canzone</div>
-            <div class="text-secondary small">Artista</div>
+            <div id="playerTitle" class="fw-semibold">Canzone</div>
+            <div id="playerArtist" class="text-secondary small">Artista</div>
           </div>
           <i class="bi bi-heart ms-3"></i>
         </div>

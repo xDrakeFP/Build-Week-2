@@ -118,17 +118,25 @@ searchForm.addEventListener("submit", (e) => {
           seconds = seconds;
         }
 
+        let title = data.data[i].title_short.replace(/'/g, "\\'");
+        let artist = data.data[i].artist.name.replace(/'/g, "\\'");
+        let imageUrl = data.data[i].album.cover_big;
+
         risultatiRicerca.innerHTML += `
        <div class="row align-items-center my-3">
                   <div class="col col-3">
-                    <img
+                    <a href='./album.html?id=${data.data[
+                      i
+                    ].album.id.toString()}'><img
                       alt="cover"
                       src=${data.data[i].album.cover_big}
                       class="w-100"
-                    />
+                    /></a>
                   </div>
                   <div class="col col-6">
-                   <a href='javascript:void(0)' class='text-decoration-none text-white'> <h2>${data.data[i].title_short}</h2></a>
+                   <a href='javascript:void(0)' class='text-decoration-none text-white'
+                   onclick="player('${title}', '${artist}', '${imageUrl}')"
+                   > <h2>${data.data[i].title_short}</h2></a>
                   </div>
                   <div class="col col-2">
                     <h5>${minutes}: ${seconds}</h5>
@@ -146,4 +154,10 @@ searchForm.addEventListener("submit", (e) => {
 const closeSearch = function () {
   Risultati.classList.add("d-none");
   risultatiRicerca.innerHTML = "";
+};
+
+const player = function (title, artist, imageUrl) {
+  document.getElementById("playerImg").src = imageUrl;
+  document.getElementById("playerTitle").innerText = title;
+  document.getElementById("playerArtist").innerText = artist;
 };
