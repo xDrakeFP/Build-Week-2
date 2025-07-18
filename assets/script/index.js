@@ -238,3 +238,64 @@ const player = function (title, artist, imageUrl, audioUrl) {
     audio.src = "";
   }
 };
+//avvio colori player
+
+const element = document.getElementById("color");
+const playButton = document.getElementById("playPauseBtn");
+const timerElement = document.getElementById("currentTime");
+
+let colorIndex = 0;
+const colors = ["yellow", "lime", "white"];
+let animationSpeed = 1;
+let startTime = null;
+let animationFrameId = null;
+let isAnimating = false;
+let timerStart = null;
+
+function formatTime(seconds) {
+  const min = String(Math.floor(seconds / 60)).padStart(2, "0");
+  const sec = String(Math.floor(seconds % 60)).padStart(2, "0");
+  return `${min}:${sec}`;
+}
+
+function animate(currentTime) {
+  if (!startTime) {
+    startTime = currentTime;
+    timerStart = currentTime;
+  }
+
+  const elapsedTime = currentTime - startTime;
+  const elapsedSeconds = (currentTime - timerStart) / 1000;
+
+  // Aggiorna timer visivo
+  timerElement.textContent = formatTime(elapsedSeconds);
+
+  // Cambia colore ogni 2 secondi
+  if (elapsedTime > 2000) {
+    startTime = currentTime;
+    colorIndex = (colorIndex + 1) % colors.length;
+    element.style.color = colors[colorIndex];
+  }
+
+  // Alterna velocità (rimasta fissa a 1 in questo caso)
+  animationSpeed = 1;
+
+  // Applica trasformazione
+  element.style.transform = `scale(${animationSpeed})`;
+
+  animationFrameId = requestAnimationFrame(animate);
+}
+
+// Toggle play/stop
+playButton.addEventListener("click", () => {
+  if (isAnimating) {
+    cancelAnimationFrame(animationFrameId);
+    isAnimating = false;
+  } else {
+    startTime = null;
+    timerStart = null;
+    timerElement.textContent = "00:00";
+    animationFrameId = requestAnimationFrame(animate);
+    isAnimating = true;
+  }
+});
