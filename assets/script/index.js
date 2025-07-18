@@ -238,6 +238,8 @@ const player = function (title, artist, imageUrl, audioUrl) {
     audio.src = "";
   }
 };
+
+/*
 //avvio colori player
 
 const element = document.getElementById("color");
@@ -299,3 +301,4 @@ playButton.addEventListener("click", () => {
     isAnimating = true;
   }
 });
+*/
