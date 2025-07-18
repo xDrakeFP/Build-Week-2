@@ -51,26 +51,27 @@
               <div class="border border-bottom border-dark-subtle"></div>
               <div class="my-4 d-flex flex-column align-items-center">
                 <div style="width: 300px">
-                  <label
-                    for="exampleFormControlInput1"
-                    class="form-label text-start w-100"
-                    >Indirizzo e-mail o nome utente</label
-                  >
-                  <input
-                    type="email"
-                    class="form-control bg-black text-white"
-                    id="exampleFormControlInput1"
-                    placeholder="Indirizzo e-mail o nome utente"
-                  />
-                  <div>
-                    <button
-                      type="button"
-                      class="btn btn-success rounded-pill my-4 text-dark"
-                      style="width: 300px"
+                  <form>
+                    <label for="nomeUtente" class="form-label text-start w-100"
+                      >Inserisci il tuo nome utente</label
                     >
-                      Continua
-                    </button>
-                  </div>
+                    <input
+                      type="email"
+                      class="form-control text-white"
+                      id="nomeUtente"
+                      placeholder="Nome utente"
+                      required
+                    />
+                    <div>
+                      <button
+                        type="submit"
+                        class="btn btn-success rounded-pill my-4 text-dark"
+                        style="width: 300px"
+                      >
+                        Continua
+                      </button>
+                    </div>
+                  </form>
                   <p>
                     Non hai un'account?
                     <span><a href="#">Iscriviti a Spotify</a></span>
