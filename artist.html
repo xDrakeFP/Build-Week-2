@@ -204,6 +204,7 @@
               <div class="position-absolute top-0 start-0 container-fluid pt-2">
                 <button
                   class="btn btn-dark opacity-50 text-white rounded-circle px-3 py-2 d-lg-none"
+                  onclick="goBack()"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -241,6 +242,31 @@
               </div>
               <div class="position-absolute bottom-0 start-0 container-fluid">
                 <h1 id="nomeArtista">Nome Artista</h1>
+              </div>
+              <!-- NOME UTENTE -->
+              <div class="position-absolute top-0 end-0 me-4">
+                <div class="dropdown d-flex pt-3">
+                  <button
+                    class="btn dropdown-toggle text-white"
+                    type="button"
+                    id="user"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Mario Rossi
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#">Il tuo Account</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Impostazioni</a></li>
+                    <li>
+                      <a class="dropdown-item text-danger" href="./login.html"
+                        >Esci</a
+                      >
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
             <section class="container-fluid d-flex my-3">
@@ -496,5 +522,9 @@
       crossorigin="anonymous"
     ></script>
     <script src="./assets/script/artist.js"></script>
+    <script src="./assets/script/login.js"></script>
+    <script>
+      window.onload = nome;
+    </script>
   </body>
 </html>
