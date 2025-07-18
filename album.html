@@ -24,7 +24,10 @@
     >
       <ul class="nav w-100 d-flex">
         <li class="nav-item text-center flex-fill min-width-0">
-          <a href="#" class="nav-link px-0 small text-white px-0 d-block">
+          <a
+            href="./index.html"
+            class="nav-link px-0 small text-white px-0 d-block"
+          >
             <i class="bi bi-house-door-fill d-block fs-5"></i>
             Home
           </a>
@@ -47,6 +50,31 @@
         </li>
       </ul>
     </nav>
+    <!--Player mobile-->
+    <div
+      class="position-fixed start-0 end-0 px-2 m-2 z-2 player d-lg-none"
+      style="bottom: 12%"
+    >
+      <div
+        class="bg-secondary text-white rounded d-flex align-items-center justify-content-between px-3 py-2 shadow"
+        style="height: 56px"
+      >
+        <div
+          class="text-truncate me-3 fw-semibold small"
+          style="max-width: 50%"
+        >
+          Supernatural Parody by The Hillywood Show
+        </div>
+
+        <!-- Icone player-->
+        <div class="d-flex align-items-center gap-3">
+          <i class="bi bi-speaker fs-5"></i>
+          <i class="bi bi-heart fs-5"></i>
+          <i class="bi bi-play-fill fs-4" id="playBtnMob"></i>
+        </div>
+      </div>
+    </div>
+
     <main>
       <div class="container-fluid p-0">
         <div class="row no-gutters">
@@ -315,7 +343,11 @@
                 <!--  -->
                 <!-- TRACCE ALBUM -->
 
-                <section class="mb-5 pb-5" id="tracce-album">
+                <section
+                  class="mb-5 pb-5"
+                  id="tracce-album"
+                  style="padding-bottom: 8em !important"
+                >
                   <!-- <div
                     class="tab traccia-tab d-none d-lg-block"
                     style="display: flex !important"

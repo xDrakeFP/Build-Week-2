@@ -121,6 +121,7 @@ searchForm.addEventListener("submit", (e) => {
         let title = data.data[i].title_short.replace(/'/g, "\\'");
         let artist = data.data[i].artist.name.replace(/'/g, "\\'");
         let imageUrl = data.data[i].album.cover_big;
+        let preview = data.data[i].preview;
 
         risultatiRicerca.innerHTML += `
        <div class="row align-items-center my-3">
@@ -135,7 +136,7 @@ searchForm.addEventListener("submit", (e) => {
                   </div>
                   <div class="col col-6">
                    <a href='javascript:void(0)' class='text-decoration-none text-white'
-                   onclick="player('${title}', '${artist}', '${imageUrl}')"
+                   onclick="player('${title}', '${artist}', '${imageUrl}', '${preview}')"
                    > <h2>${data.data[i].title_short}</h2></a>
                   </div>
                   <div class="col col-2">
@@ -156,8 +157,84 @@ const closeSearch = function () {
   risultatiRicerca.innerHTML = "";
 };
 
+/*
 const player = function (title, artist, imageUrl) {
   document.getElementById("playerImg").src = imageUrl;
   document.getElementById("playerTitle").innerText = title;
   document.getElementById("playerArtist").innerText = artist;
+}; */
+
+// --------------------- Player Audio Control ---------------------
+
+const audio = document.getElementById("audioPlayer");
+const playBtn = document.querySelector(".bi-play-circle-fill");
+const progressBar = document.querySelector(".progress-bar");
+const currentTimeEl = document.querySelectorAll(".small.text-secondary")[0];
+const durationEl = document.querySelectorAll(".small.text-secondary")[1];
+const playBtnMob = document.getElementById("playBtnMob");
+
+let isPlaying = false;
+
+playBtn.addEventListener("click", () => {
+  if (!audio.src) return;
+
+  if (isPlaying) {
+    audio.pause();
+  } else {
+    audio.play();
+  }
+});
+
+playBtnMob.addEventListener("click", () => {
+  if (!audio.src) return;
+
+  if (isPlaying) {
+    audio.pause();
+  } else {
+    audio.play();
+  }
+});
+
+audio.addEventListener("play", () => {
+  isPlaying = true;
+  playBtn.classList.remove("bi-play-circle-fill");
+  playBtn.classList.add("bi-pause-circle-fill");
+});
+
+audio.addEventListener("pause", () => {
+  isPlaying = false;
+  playBtn.classList.remove("bi-pause-circle-fill");
+  playBtn.classList.add("bi-play-circle-fill");
+});
+
+audio.addEventListener("timeupdate", () => {
+  const percent = (audio.currentTime / audio.duration) * 100;
+  progressBar.style.width = percent + "%";
+  currentTimeEl.textContent = formatTime(audio.currentTime);
+  durationEl.textContent = formatTime(audio.duration);
+});
+
+function formatTime(seconds) {
+  if (isNaN(seconds)) return "0:00";
+  const min = Math.floor(seconds / 60);
+  const sec = Math.floor(seconds % 60)
+    .toString()
+    .padStart(2, "0");
+  return `${min}:${sec}`;
+}
+
+// --------------------- Funzione player ---------------------
+
+const player = function (title, artist, imageUrl, audioUrl) {
+  document.getElementById("playerImg").src = imageUrl;
+  document.getElementById("playerTitle").innerText = title;
+  document.getElementById("playerArtist").innerText = artist;
+
+  if (audioUrl) {
+    audio.src = audioUrl;
+    audio.play();
+  } else {
+    audio.pause();
+    audio.src = "";
+  }
 };

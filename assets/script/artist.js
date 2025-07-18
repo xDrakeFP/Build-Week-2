@@ -1,48 +1,48 @@
 // URL di base
 const parameters = new URLSearchParams(window.location.search);
-const artistId = parameters.get('id');
+const artistId = parameters.get("id");
 
 const endSearch =
-  ' https://striveschool-api.herokuapp.com/api/deezer/search?q=';
-const endAlbum = 'https://striveschool-api.herokuapp.com/api/deezer/album';
+  " https://striveschool-api.herokuapp.com/api/deezer/search?q=";
+const endAlbum = "https://striveschool-api.herokuapp.com/api/deezer/album";
 
-const endArtist = 'https://striveschool-api.herokuapp.com/api/deezer/artist';
+const endArtist = "https://striveschool-api.herokuapp.com/api/deezer/artist";
 
-const headerImg = document.getElementById('bgArtist');
-const headerArtist = document.getElementById('nomeArtista');
-const content = document.getElementById('content');
-const mainImgs = document.querySelectorAll('main img');
-const Avatar = document.getElementById('Avatar');
-let imgSrc = '';
+const headerImg = document.getElementById("bgArtist");
+const headerArtist = document.getElementById("nomeArtista");
+const content = document.getElementById("content");
+const mainImgs = document.querySelectorAll("main img");
+const Avatar = document.getElementById("Avatar");
+let imgSrc = "";
 
-let tracklist = '';
+let tracklist = "";
 
 // Creazione oggetto Audio
 const audio = new Audio();
 let isPlaying = false;
 
 // Selezione bottone play/pause tramite classe fissa (da aggiungere nel tuo HTML)
-const playBtn = document.querySelector('.play-toggle');
-const progressBar = document.querySelector('.progresso-canzone .progress-bar');
-const startTime = document.querySelectorAll('.small.text-secondary')[0];
-const endTime = document.querySelectorAll('.small.text-secondary')[1];
+const playBtn = document.querySelector(".play-toggle");
+const progressBar = document.querySelector(".progresso-canzone .progress-bar");
+const startTime = document.querySelectorAll(".small.text-secondary")[0];
+const endTime = document.querySelectorAll(".small.text-secondary")[1];
 
 // Funzione per ottenere la traccia dell'artista e popolare la lista
 const getTracks = function () {
   fetch(tracklist)
     .then((res) => {
       if (res.ok) return res.json();
-      else throw new Error('errore');
+      else throw new Error("errore");
     })
     .then((data1) => {
-      document.getElementById('hide').classList.toggle('d-none');
-      content.innerHTML = '';
+      document.getElementById("hide").classList.toggle("d-none");
+      content.innerHTML = "";
       for (let i = 0; i < 5; i++) {
         let duration = data1.data[i].duration;
         let minutes = Math.floor(duration / 60);
         let seconds = Math.floor(duration % 60);
-        if (minutes < 10) minutes = '0' + minutes;
-        if (seconds < 10) seconds = '0' + seconds;
+        if (minutes < 10) minutes = "0" + minutes;
+        if (seconds < 10) seconds = "0" + seconds;
 
         let title = data1.data[i].title.replace(/'/g, "\\'");
         let artist = data1.data[i].artist.name.replace(/'/g, "\\'");
@@ -86,7 +86,7 @@ const getTracks = function () {
 `;
       }
 
-      document.getElementById('show').classList.remove('d-none');
+      document.getElementById("show").classList.remove("d-none");
     })
 
     .catch((er) => {
@@ -97,18 +97,18 @@ getTracks();
 
 // Ottenimento dati artista
 const getArtist = function () {
-  fetch(endArtist + '/' + artistId)
+  fetch(endArtist + "/" + artistId)
     .then((res) => {
       if (res.ok) {
         return res.json();
       } else {
-        throw new Error('errore');
+        throw new Error("errore");
       }
     })
     .then((data) => {
       tracklist = data.tracklist;
-      headerImg.setAttribute('src', data.picture_big);
-      Avatar.setAttribute('src', data.picture_big);
+      headerImg.setAttribute("src", data.picture_big);
+      Avatar.setAttribute("src", data.picture_big);
       headerArtist.innerText = `${data.name}`;
       getTracks();
     })
@@ -118,36 +118,36 @@ const getArtist = function () {
 getArtist();
 
 // Gestione apertura barra ricerca
-const showBarBtn = document.getElementById('showBar');
-const searchBar = document.getElementById('searchBar');
-const showBarMob = document.getElementById('showBarMob');
-const risultatiRicerca = document.getElementById('risultatiRicerca');
-const searchForm = document.getElementById('searchForm');
-const searchInput = document.querySelector('form input');
-const Risultati = document.getElementById('Risultati');
+const showBarBtn = document.getElementById("showBar");
+const searchBar = document.getElementById("searchBar");
+const showBarMob = document.getElementById("showBarMob");
+const risultatiRicerca = document.getElementById("risultatiRicerca");
+const searchForm = document.getElementById("searchForm");
+const searchInput = document.querySelector("form input");
+const Risultati = document.getElementById("Risultati");
 
-showBarBtn.addEventListener('click', (e) => {
+showBarBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  searchBar.classList.toggle('d-none');
+  searchBar.classList.toggle("d-none");
 });
 
-showBarMob.addEventListener('click', (e) => {
+showBarMob.addEventListener("click", (e) => {
   e.preventDefault();
-  searchBar.classList.toggle('d-none');
+  searchBar.classList.toggle("d-none");
 });
 
-searchForm.addEventListener('submit', (e) => {
+searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  Risultati.classList.remove('d-none');
+  Risultati.classList.remove("d-none");
   fetch(endSearch + searchInput.value)
-    .then((res) => (res.ok ? res.json() : Promise.reject('errore')))
+    .then((res) => (res.ok ? res.json() : Promise.reject("errore")))
     .then((data) => {
-      risultatiRicerca.innerHTML = '';
+      risultatiRicerca.innerHTML = "";
       for (let i = 0; i < data.data.length; i++) {
         let minutes = Math.floor(data.data[i].duration / 60);
         let seconds = Math.floor(data.data[i].duration % 60);
-        if (minutes < 10) minutes = '0' + minutes;
-        if (seconds < 10) seconds = '0' + seconds;
+        if (minutes < 10) minutes = "0" + minutes;
+        if (seconds < 10) seconds = "0" + seconds;
 
         let title = data.data[i].title_short.replace(/'/g, "\\'");
         let artist = data.data[i].artist.name.replace(/'/g, "\\'");
@@ -175,27 +175,41 @@ searchForm.addEventListener('submit', (e) => {
 });
 
 const closeSearch = function () {
-  Risultati.classList.add('d-none');
-  risultatiRicerca.innerHTML = '';
+  Risultati.classList.add("d-none");
+  risultatiRicerca.innerHTML = "";
 };
 
 // Gestione click bottone play/pause
-playBtn.addEventListener('click', () => {
+playBtn.addEventListener("click", () => {
   if (isPlaying) {
     audio.pause();
     isPlaying = false;
-    playBtn.classList.remove('bi-pause-circle-fill');
-    playBtn.classList.add('bi-play-circle-fill');
+    playBtn.classList.remove("bi-pause-circle-fill");
+    playBtn.classList.add("bi-play-circle-fill");
   } else {
-    audio.play().catch((err) => console.error('Errore riproduzione:', err));
+    audio.play().catch((err) => console.error("Errore riproduzione:", err));
     isPlaying = true;
-    playBtn.classList.remove('bi-play-circle-fill');
-    playBtn.classList.add('bi-pause-circle-fill');
+    playBtn.classList.remove("bi-play-circle-fill");
+    playBtn.classList.add("bi-pause-circle-fill");
+  }
+});
+
+playBtnMob.addEventListener("click", () => {
+  if (isPlaying) {
+    audio.pause();
+    isPlaying = false;
+    playBtn.classList.remove("bi-pause-circle-fill");
+    playBtn.classList.add("bi-play-circle-fill");
+  } else {
+    audio.play().catch((err) => console.error("Errore riproduzione:", err));
+    isPlaying = true;
+    playBtn.classList.remove("bi-play-circle-fill");
+    playBtn.classList.add("bi-pause-circle-fill");
   }
 });
 
 // Gestione aggiornamento barra di progresso e tempo
-audio.addEventListener('timeupdate', () => {
+audio.addEventListener("timeupdate", () => {
   const duration = audio.duration || 0;
   const currentTime = audio.currentTime || 0;
   const percentage = (currentTime / duration) * 100;
@@ -208,7 +222,7 @@ audio.addEventListener('timeupdate', () => {
 function formatTime(seconds) {
   const mins = Math.floor(seconds / 60) || 0;
   const secs = Math.floor(seconds % 60) || 0;
-  return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+  return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
 }
 
 const goBack = function () {
@@ -221,7 +235,7 @@ const showMore = function () {
       if (res.ok) {
         return res.json();
       } else {
-        throw new Error('errore');
+        throw new Error("errore");
       }
     })
     .then((data1) => {
@@ -230,14 +244,14 @@ const showMore = function () {
         let duration = data1.data[i].duration;
         let minutes = Math.floor(duration / 60);
         if (minutes < 10) {
-          minutes = '0' + minutes.toString();
+          minutes = "0" + minutes.toString();
         } else {
           minutes = minutes;
         }
 
         let seconds = Math.floor(duration % 60);
         if (seconds < 10) {
-          seconds = '0' + seconds.toString();
+          seconds = "0" + seconds.toString();
         } else {
           seconds = seconds;
         }
@@ -282,8 +296,8 @@ const showMore = function () {
 `;
       }
 
-      document.getElementById('show').classList.toggle('d-none');
-      document.getElementById('hide').classList.toggle('d-none');
+      document.getElementById("show").classList.toggle("d-none");
+      document.getElementById("hide").classList.toggle("d-none");
     })
 
     .catch((er) => {
@@ -292,13 +306,15 @@ const showMore = function () {
 };
 // Funzione principale del player audio
 const player = function (title, artist, imageUrl, audioUrl) {
-  console.log('URL audio:', audioUrl); // debug
-  document.getElementById('playerImg').src = imageUrl;
-  document.getElementById('playerTitle').innerText = title;
-  document.getElementById('playerArtist').innerText = artist;
+  console.log("URL audio:", audioUrl); // debug
+  document.getElementById("playerImg").src = imageUrl;
+  document.getElementById("playerTitle").innerText = title;
+  document.getElementById("playerArtist").innerText = artist;
   audio.src = audioUrl;
-  audio.play().catch((err) => console.error('Errore riproduzione audio:', err));
+  audio.play().catch((err) => console.error("Errore riproduzione audio:", err));
   isPlaying = true;
-  playBtn.classList.remove('bi-play-circle-fill');
-  playBtn.classList.add('bi-pause-circle-fill');
+  playBtn.classList.remove("bi-play-circle-fill");
+  playBtn.classList.add("bi-pause-circle-fill");
 };
+
+playBtnMob;

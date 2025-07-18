@@ -13,6 +13,72 @@ const annoAlbum = document.querySelectorAll(".anno-album");
 const numeroTracce = document.querySelectorAll(".numero-tracce");
 const durataAlbum = document.querySelectorAll(".durata-album");
 
+const goBack = function () {
+  window.history.back();
+};
+
+// Gestione apertura barra ricerca
+const showBarBtn = document.getElementById("showBar");
+const searchBar = document.getElementById("searchBar");
+const showBarMob = document.getElementById("showBarMob");
+const risultatiRicerca = document.getElementById("risultatiRicerca");
+const searchForm = document.getElementById("searchForm");
+const searchInput = document.querySelector("form input");
+const Risultati = document.getElementById("Risultati");
+
+showBarBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  searchBar.classList.toggle("d-none");
+});
+
+showBarMob.addEventListener("click", (e) => {
+  e.preventDefault();
+  searchBar.classList.toggle("d-none");
+});
+
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  Risultati.classList.remove("d-none");
+  fetch(endSearch + searchInput.value)
+    .then((res) => (res.ok ? res.json() : Promise.reject("errore")))
+    .then((data) => {
+      risultatiRicerca.innerHTML = "";
+      for (let i = 0; i < data.data.length; i++) {
+        let minutes = Math.floor(data.data[i].duration / 60);
+        let seconds = Math.floor(data.data[i].duration % 60);
+        if (minutes < 10) minutes = "0" + minutes;
+        if (seconds < 10) seconds = "0" + seconds;
+
+        let title = data.data[i].title_short.replace(/'/g, "\\'");
+        let artist = data.data[i].artist.name.replace(/'/g, "\\'");
+        let imageUrl = data.data[i].album.cover_big;
+        let preview = data.data[i].preview;
+
+        risultatiRicerca.innerHTML += `
+       <div class="row align-items-center my-3">
+          <div class="col col-3">
+            <a href='./album.html?id=${data.data[i].album.id}'><img src=${imageUrl} class="w-100" /></a>
+          </div>
+          <div class="col col-6">
+            <a href='javascript:void(0)' class='text-decoration-none text-white'
+               onclick="player('${title}', '${artist}', '${imageUrl}', '${preview}')">
+              <h2>${title}</h2></a>
+          </div>
+          <div class="col col-2">
+            <h5 class='text-white'>${minutes}:${seconds}</h5>
+          </div>
+        </div>`;
+      }
+      e.target.reset();
+    })
+    .catch((er) => console.log(er));
+});
+
+const closeSearch = function () {
+  Risultati.classList.add("d-none");
+  risultatiRicerca.innerHTML = "";
+};
+
 fetch(endAlbum + "/" + albumId)
   .then((res) => {
     if (res.ok) return res.json();
@@ -84,10 +150,21 @@ const playBtn = document.querySelector(".bi-play-circle-fill");
 const progressBar = document.querySelector(".progress-bar");
 const currentTimeEl = document.querySelectorAll(".small.text-secondary")[0];
 const durationEl = document.querySelectorAll(".small.text-secondary")[1];
+const playBtnMob = document.getElementById("playBtnMob");
 
 let isPlaying = false;
 
 playBtn.addEventListener("click", () => {
+  if (!audio.src) return;
+
+  if (isPlaying) {
+    audio.pause();
+  } else {
+    audio.play();
+  }
+});
+
+playBtnMob.addEventListener("click", () => {
   if (!audio.src) return;
 
   if (isPlaying) {
