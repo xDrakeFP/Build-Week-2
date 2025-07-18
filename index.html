@@ -161,8 +161,23 @@
           </div>
           <!-- Container Centrale che in mobile è fullscreen -->
           <div class="col-12 col-lg-6 bg-dark flex-fill position-relative">
-            <div class="position-absolute top-0 end-0 me-4">
-              <div class="dropdown d-flex pt-3">
+            <!--barra di ricerca-->
+            <div class="container-fluid my-3 d-none" id="searchBar">
+              <form id="searchForm" class="d-flex" role="search">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button class="btn btn-outline-success" type="submit">
+                  Search
+                </button>
+              </form>
+            </div>
+            <!--fine barra di ricerca-->
+            <div class="top-0 end-0 me-4">
+              <div class="dropdown d-flex justify-content-end pt-3">
                 <button
                   class="btn btn-outline-dark dropdown-toggle text-white"
                   type="button"
@@ -186,22 +201,7 @@
                 </ul>
               </div>
             </div>
-            <div class="container mt-5">
-              <!--barra di ricerca-->
-              <div class="container-fluid my-3 d-none" id="searchBar">
-                <form id="searchForm" class="d-flex" role="search">
-                  <input
-                    class="form-control me-2"
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search"
-                  />
-                  <button class="btn btn-outline-success" type="submit">
-                    Search
-                  </button>
-                </form>
-              </div>
-              <!--fine barra di ricerca-->
+            <div class="container mt-1">
               <!-- Header -->
               <div class="row align-items-center">
                 <!-- Hero -->
